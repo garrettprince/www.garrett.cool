@@ -1,13 +1,10 @@
+// Scene will hold all 3D objects and manage transitions through user input and interaction
+
 import { Canvas } from "@react-three/fiber";
-import { useState, Suspense } from "react";
+import { Environment } from "@react-three/drei";
+import { useState } from "react";
 
 export default function Scene() {
-  const [blockActive, setBlockActive] = useState(false);
-
-  const homeScreen = () => {
-    setBlockActive(false);
-  };
-
   return (
     <Canvas
       orthographic
@@ -20,30 +17,21 @@ export default function Scene() {
         zoom: 100,
       }}
     >
-
       {/* Lighting */}
       <ambientLight intensity={2} />
       <pointLight intensity={3} position={[0, 20, 10]} />
-      {/* <pointLight intensity={1.4} position={[0, 6, 0]} /> */}
 
-      {/* Text */}
-      {/* <TextTest
-        textContent="Welcome to my site"
-        position={[-1.5, 3.5, 0]}
-        scale={0.15}
-        blockActive={blockActive}
-        setBlockActive={setBlockActive}
-      /> */}
-
-      {/* <Box blockActive={blockActive} setBlockActive={setBlockActive} /> */}
-      {/* <Box2 /> */}
-
-      {/* <TextTest
-        textContent="X"
-        position={[1.5, 3.5, 0]}
-        scale={0.5}
-        homeScreen={homeScreen}
-      /> */}
+      {/* Objects */}
+      <TestBox />
     </Canvas>
+  );
+}
+
+function TestBox() {
+  return (
+    <mesh rotation={[1, 1, 1]}>
+      <boxGeometry />
+      <meshBasicMaterial />
+    </mesh>
   );
 }

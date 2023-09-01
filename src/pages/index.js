@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Scene from "../components/Scene";
+import Overlay from "../components/Overlay";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Scene />
+      <Overlay />
     </div>
   );
 }
