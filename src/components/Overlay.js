@@ -22,7 +22,7 @@ export default function Overlay({ action, setAction }) {
             title="Blue Block"
             subtitle="Coming 2025"
           />
-          <InfoBubble />
+          <InfoBubble input="I've been working on the Panic Playdate engine for a while now and it's cool to see it start working soon." />
         </div>
       )}
       {/* <ToggleButton action={action} setAction={setAction} /> */}
@@ -73,15 +73,35 @@ function XButton({ action, setAction }) {
   );
 }
 
-function InfoBubble({ action, setAction }) {
+function InfoBubble({ action, setAction, input }) {
+  let i = 0;
+  let txt = input;
+  let speed = 35;
+
+  function typeWriter() {
+    if (i < txt.length) {
+      document.getElementById("info").innerHTML += txt.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+
+  function typeWriterAction() {
+    if (action === "new") {
+      return typeWriter();
+    }
+  }
+
   return (
     <motion.div
+      id="info"
       initial={{ y: 4, opacity: 0 }}
       animate={{ y: -2, opacity: 1 }}
       transition={{ ease: "easeOut", duration: 0.9 }}
-      className="absolute w-40 text-center bottom-10 left-0 right-0 mx-auto"
+      className="absolute w-64 rounded-xl text-left text-xs px-4 py-2 bottom-10 left-0 right-0 mx-auto ml-28 bg-black/10"
+      onClick={typeWriter}
     >
-      <h1 className="">hey, this is a test</h1>
+      hey
     </motion.div>
   );
 }
