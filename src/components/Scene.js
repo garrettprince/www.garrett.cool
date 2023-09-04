@@ -1,8 +1,8 @@
 // Scene will hold all 3D objects and manage transitions through user input and interaction
 
-import { Canvas } from "@react-three/fiber";
-import { Environment } from "@react-three/drei";
-import { useState } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { Environment, Float } from "@react-three/drei";
+import { useState, useRef } from "react";
 import { useSpring, animated } from "@react-spring/three";
 
 export default function Scene({ action, setAction }) {
@@ -29,28 +29,66 @@ export default function Scene({ action, setAction }) {
       <pointLight intensity={3} position={[0, 20, 10]} />
 
       {/* Objects */}
-      <TestBox
-        // scale={scale}
-        // color={color}
+      <Float
         action={action}
-        setAction={setAction}
-      />
-      <TestBox2 action={action} />
+        speed={1} // Animation speed, defaults to 1
+        rotationIntensity={action === "home" ? 0.7 : 0.25} // XYZ rotation intensity, defaults to 1
+        floatIntensity={1} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
+        floatingRange={action === "home" ? [0.15, -0.15] : [0.05, 0.05]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
+      >
+        <GarrettFace action={action} setAction={setAction} />
+      </Float>
+      <Float
+        action={action}
+        speed={1} // Animation speed, defaults to 1
+        rotationIntensity={0.7} // XYZ rotation intensity, defaults to 1
+        floatIntensity={1} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
+        floatingRange={[-0.1, 0.1]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
+      >
+        <NameTag action={action} setAction={setAction} />
+      </Float>
+      <Float
+        action={action}
+        speed={1} // Animation speed, defaults to 1
+        rotationIntensity={0.7} // XYZ rotation intensity, defaults to 1
+        floatIntensity={1} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
+        floatingRange={[-0.1, 0.1]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
+      >
+        <PlayDate action={action} setAction={setAction} />
+      </Float>
     </Canvas>
   );
 }
 
-function TestBox({ action, setAction }) {
-  const { scale, color, position } = useSpring({
-    color: action === "new" ? "blue" : "red",
-    scale: action === "new" ? 2 : 0.9,
-    // position: blockActive ? [0, 0, 0] : [-2, 2.75, 0],
+function GarrettFace({ action, setAction }) {
+  const { scale, color, position, rotation } = useSpring({
+    color: action !== "home" ? "green" : "red",
+    scale: action !== "home" ? 0.7 : 1.8,
+    position: action !== "home" ? [-1.7, -3, 0] : [0, 0, 0],
+    rotation: action !== "home" ? [0.2, 0.8, 0] : [0, 0, 0],
   });
+
+  // This reference will give us direct access to the mesh
+  const meshRef = useRef();
+
+  // Subscribe this component to the render-loop, rotate the mesh every frame
+  // useFrame((state) => {
+  //   if (action === "home") {
+  //     meshRef.current.position.y =
+  //       Math.sin(state.clock.getElapsedTime()) * 0.10;
+  //   } else {
+  //     meshRef.current.position.x = 0;
+  //     meshRef.current.position.y = 0;
+  //     meshRef.current.position.z = 0;
+  //   }
+  // });
   return (
     <animated.mesh
-      onClick={() => setAction("new")}
-      rotation={[1, 1, 1]}
+      ref={meshRef}
+      // onClick={() => setAction("new")}
       scale={scale}
+      position={position}
+      rotation={rotation}
     >
       <animated.boxGeometry />
       <animated.meshStandardMaterial color={color} />
@@ -58,22 +96,64 @@ function TestBox({ action, setAction }) {
   );
 }
 
-function TestBox2({ action }) {
+function NameTag({ action, setAction }) {
   const { scale, color, position } = useSpring({
-    // color: action === "new" ? "blue" : "red",
-    scale: action === "new" ? 0.5 : 1,
-    position: action === "new" ? [-1.35, -3.7, 0] : [1, 1, 1],
+    color: action === "nameTag" ? "blue" : "red",
+    scale: action === "nameTag" ? 2 : 1,
+    position: action === "nameTag" ? [0, 0, 0] : [-1.3, 2.8, 0],
+  });
+
+  // This reference will give us direct access to the mesh
+  const meshRef = useRef();
+
+  // Subscribe this component to the render-loop, animating the mesh every frame
+  useFrame(() => {
+    meshRef.current.rotation.y += 0.001;
   });
 
   return (
     <animated.mesh
-      rotation={[0, 1, 1]}
+      ref={meshRef}
       position={position}
       transparent={false}
       scale={scale}
+      onClick={() =>
+        action === "home" ? setAction("nameTag") : setAction("home")
+      }
     >
       <animated.boxGeometry />
-      <animated.meshStandardMaterial color="blue" />
+      <animated.meshStandardMaterial color={color} />
+    </animated.mesh>
+  );
+}
+
+function PlayDate({ action, setAction }) {
+  const { scale, color, position } = useSpring({
+    color: action === "playDate" ? "blue" : "red",
+    scale: action === "playDate" ? 2 : 1,
+    position: action === "playDate" ? [0, 0, 0] : [1.3, 2.8, 0],
+  });
+
+  // This reference will give us direct access to the mesh
+  const meshRef = useRef();
+
+  // Subscribe this component to the render-loop, animating the mesh every frame
+  useFrame(() => {
+    meshRef.current.rotation.y += 0.001;
+  });
+
+  return (
+    <animated.mesh
+      ref={meshRef}
+      position={position}
+      transparent={false}
+      scale={scale}
+      onClick={() =>
+        action === "home" ? setAction("playDate") : setAction("home")
+      }
+    >
+      <animated.boxGeometry />
+      <animated.meshStandardMaterial color={color} />
     </animated.mesh>
   );
 }
