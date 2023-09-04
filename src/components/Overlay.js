@@ -109,7 +109,7 @@ function TextBubble({ action, setAction, input }) {
       initial={{ y: 4, opacity: 0 }}
       animate={{ y: -2, opacity: 1 }}
       transition={{ ease: "easeOut", duration: 0.9 }}
-      className="absolute w-80 ml-[30%] rounded-xl text-left text-xs px-4 py-2 bottom-10 left-0 right-0 mx-auto my-auto mb-10 bg-white shadow-xl sm:ml-[35%] md:ml-[40%]"
+      className="absolute w-64 ml-[30%] rounded-xl text-left text-xs px-4 py-2 bottom-10 left-0 right-0 mx-auto my-auto mb-10 bg-white shadow-xl sm:ml-[35%] md:ml-[40%]"
       onClick={typeWriter}
     >
       hey
