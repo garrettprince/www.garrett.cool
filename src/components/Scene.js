@@ -64,7 +64,7 @@ function GarrettFace({ action, setAction }) {
   const { scale, color, position, rotation } = useSpring({
     color: action !== "home" ? "green" : "red",
     scale: action !== "home" ? 0.7 : 1.8,
-    position: action !== "home" ? [-1.7, -3, 0] : [0, 0, 0],
+    position: action !== "home" ? [-1.2, -2.5, 0] : [0, 0, 0],
     rotation: action !== "home" ? [0.2, 0.8, 0] : [0, 0, 0],
   });
 
@@ -97,11 +97,14 @@ function GarrettFace({ action, setAction }) {
 }
 
 function NameTag({ action, setAction }) {
-  const { scale, color, position } = useSpring({
+  const { scale, color, position, opacity } = useSpring({
     color: action === "nameTag" ? "blue" : "red",
-    scale: action === "nameTag" ? 2 : 1,
-    position: action === "nameTag" ? [0, 0, 0] : [-1.3, 2.8, 0],
+    scale: action === "nameTag" ? 1.8 : 0.7,
+    position: action === "nameTag" ? [0, 0, 0] : [-1, 2.8, 0],
+    opacity: action === "home" ? 1 : 0,
   });
+
+  console.log(opacity);
 
   // This reference will give us direct access to the mesh
   const meshRef = useRef();
@@ -122,7 +125,7 @@ function NameTag({ action, setAction }) {
       }
     >
       <animated.boxGeometry />
-      <animated.meshStandardMaterial color={color} />
+      <animated.meshPhongMaterial transparent color={color} opacity={opacity} />
     </animated.mesh>
   );
 }
@@ -130,8 +133,8 @@ function NameTag({ action, setAction }) {
 function PlayDate({ action, setAction }) {
   const { scale, color, position } = useSpring({
     color: action === "playDate" ? "blue" : "red",
-    scale: action === "playDate" ? 2 : 1,
-    position: action === "playDate" ? [0, 0, 0] : [1.3, 2.8, 0],
+    scale: action === "playDate" ? 1.8 : 0.7,
+    position: action === "playDate" ? [0, 0, 0] : [1, 2.8, 0],
   });
 
   // This reference will give us direct access to the mesh
