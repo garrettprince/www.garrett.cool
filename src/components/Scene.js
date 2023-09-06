@@ -68,7 +68,6 @@ function GarrettFace({ action, setAction }) {
     rotation: action !== "home" ? [0.2, 0.8, 0] : [0, 0, 0],
   });
 
-  // This reference will give us direct access to the mesh
   const meshRef = useRef();
 
   // Subscribe this component to the render-loop, rotate the mesh every frame
@@ -99,9 +98,9 @@ function GarrettFace({ action, setAction }) {
 function NameTag({ action, setAction }) {
   const { scale, color, position, opacity } = useSpring({
     color: action === "nameTag" ? "blue" : "red",
-    scale: action === "nameTag" ? 1.8 : 0.7,
+    scale: action === "playDate" ? 0 : 0.7,
     position: action === "nameTag" ? [0, 0.5, 0] : [-1, 3.2, 0],
-    opacity: action === "home" ? 1 : 0,
+    // opacity: action === "home" ? 1 : 0,
   });
 
   console.log(opacity);
