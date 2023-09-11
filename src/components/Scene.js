@@ -35,16 +35,19 @@ export default function Scene({ action, setAction }) {
 
       {/* Lighting */}
       <ambientLight intensity={1} />
+      <directionalLight position={[4, 5, 6]} intensity={1} color={"#fff"} />
+      <directionalLight position={[1, 1, 1]} intensity={1} color={"#fff"} />
+
       <Environment preset="city" />
-      
+
       {/*  maybe add subtle sparkles later, read drei docs */}
       {/* <Sparkles /> */}
-      
+
       {/* <BakeShadows /> */}
-      <pointLight intensity={3} position={[0, 20, 10]} />
+      <spotLight intensity={3} position={[0, 20, 10]} />
 
       {/* Background Sphere */}
-      <Background />
+      {/* <Background /> */}
 
       {/* Objects */}
       <Float
@@ -85,7 +88,7 @@ function Background() {
       <LayerMaterial side={THREE.BackSide} />
       <Depth
         colorA="#f21a62"
-        colorB="0081fc"
+        colorB="#0081fc"
         alpha={1}
         mode="normal"
         near={130}

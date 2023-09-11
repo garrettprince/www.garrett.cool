@@ -30,11 +30,15 @@ export function PlayDate({ action, setAction, ...props }) {
   });
 
   return (
-    <group {...props} dispose={null} >
+    <group {...props} dispose={null}>
       <group
         ref={meshRef}
-        // scale={scale}
-        position={[1, 1, 1]}
+        scale={
+          (action === "playDate" ? 2 : 0) ||
+          (action === "home" ? 0.7 : 0) ||
+          (action !== "playDate" || "home" ? 0 : 0)
+        }
+        position={action !== "playDate" ? [1.2, 2.5, 0] : [0, 0.5, 0]}
         onClick={() =>
           action === "home" ? setAction("playDate") : setAction("home")
         }
