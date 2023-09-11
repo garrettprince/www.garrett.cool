@@ -75,9 +75,9 @@ function ProjectTitle({ title, subtitle, action, setAction }) {
 
 function XButton({ action, setAction }) {
   return (
-    <div className="">
+    <div>
       <XMarkIcon
-        className="absolute top-1 right-1 h-10 w-10"
+        className="absolute top-4 right-4 h-10 w-10"
         onClick={() => setAction("home")}
       />
     </div>
