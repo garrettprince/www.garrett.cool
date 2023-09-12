@@ -19,21 +19,9 @@ export default function GarrettFace({ action, setAction }) {
 
   const meshRef = useRef();
 
-  // Subscribe this component to the render-loop, rotate the mesh every frame
-  // useFrame((state) => {
-  //   if (action === "home") {
-  //     meshRef.current.position.y =
-  //       Math.sin(state.clock.getElapsedTime()) * 0.10;
-  //   } else {
-  //     meshRef.current.position.x = 0;
-  //     meshRef.current.position.y = 0;
-  //     meshRef.current.position.z = 0;
-  //   }
-  // });
   return (
     <animated.mesh
       ref={meshRef}
-      // onClick={() => setAction("new")}
       scale={scale}
       position={position}
       rotation={rotation}

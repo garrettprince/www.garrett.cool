@@ -24,6 +24,7 @@ import Background from "./Background";
 import ContactPhone from "./ContactPhone";
 import Portfolio from "./Portfolio";
 import Montanahead from "./Montanahead";
+import LongAddition from "./LongAddition";
 
 export default function Scene({ action, setAction }) {
   return (
@@ -113,6 +114,15 @@ export default function Scene({ action, setAction }) {
         floatingRange={[-0.04, 0.04]}
       >
         <Montanahead action={action} setAction={setAction} />
+      </Float>
+      <Float
+        action={action}
+        speed={1}
+        rotationIntensity={0.6}
+        floatIntensity={0.7}
+        floatingRange={[-0.04, 0.04]}
+      >
+        <LongAddition action={action} setAction={setAction} />
       </Float>
     </Canvas>
   );

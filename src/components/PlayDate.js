@@ -18,7 +18,7 @@ export function PlayDate({ action, setAction, ...props }) {
   const { scale, position } = useSpring({
     scale:
       (action === "playDate" ? 1.8 : 0) ||
-      (action === "home" ? 0.7 : 0) ||
+      (action === "home" ? 0.65 : 0) ||
       (action !== "playDate" || "home" ? 0 : 0),
     position: action === "playDate" ? [0, 0.5, 0] : [1, 2.5, 0],
   });

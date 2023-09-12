@@ -20,7 +20,7 @@ export default function ContactPhone({ props, action, setAction }) {
       (action !== "contactPhone" || "home" ? 0 : 0),
     position:
       (action === "contactPhone" ? [0, 0.5, 0] : 0) ||
-      (action === "home" ? [-1.2, -1.4, 0] : 0) ||
+      (action === "home" ? [-1.05, -1.4, 0] : 0) ||
       (action !== "contactPhone" || "home" ? [-1.2, -1.8, 0] : 0),
   });
 
