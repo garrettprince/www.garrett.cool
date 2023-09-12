@@ -36,21 +36,11 @@ export default function Overlay({ action, setAction }) {
           <TextBubble input="This is yet another test to see if these different blocks work with different state." />
         </div>
       )}
-      {/* <ToggleButton action={action} setAction={setAction} /> */}
     </main>
   );
 }
 
-// function Nav() {
-//   return <h1 className="">Test</h1>;
-// }
-
 function ProjectTitle({ title, subtitle, action, setAction }) {
-  // FIND OUT WHY NOT WORKING
-  //   const springs = useSpring({
-  //     from: { x: 0 },
-  //     to: { x: 100 },
-  //   });
   return (
     <motion.div
       initial={{ y: 4, opacity: 0 }}
@@ -59,7 +49,7 @@ function ProjectTitle({ title, subtitle, action, setAction }) {
       className="absolute w-40 text-center top-20 left-0 right-0 mx-auto"
     >
       <h1 className="font-bold text-3xl">{title}</h1>
-      <p className="">{subtitle}</p>
+      <p className="mono">{subtitle}</p>
     </motion.div>
 
     // FIND OUT WHY NOT WORKING //
@@ -77,7 +67,7 @@ function XButton({ action, setAction }) {
   return (
     <div>
       <XMarkIcon
-        className="absolute top-4 right-4 h-10 w-10"
+        className="absolute top-5 right-5 h-10 w-10"
         onClick={() => setAction("home")}
       />
     </div>

@@ -23,6 +23,7 @@ import GarrettFace from "./GarrettFace";
 import Background from "./Background";
 import ContactPhone from "./ContactPhone";
 import Portfolio from "./Portfolio";
+import Montanahead from "./Montanahead";
 
 export default function Scene({ action, setAction }) {
   return (
@@ -58,7 +59,7 @@ export default function Scene({ action, setAction }) {
         speed={1} // Animation speed, defaults to 1
         rotationIntensity={action === "home" ? 0.7 : 0.25} // XYZ rotation intensity, defaults to 1
         floatIntensity={0.6} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
-        floatingRange={action === "home" ? [0.10, -0.10] : [0.05, 0.05]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
+        floatingRange={action === "home" ? [0.1, -0.1] : [0.05, 0.05]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
       >
         {/* LOOK INTO PRESENTATION CONTROLS MORE */}
         {/* <PresentationControls
@@ -103,6 +104,15 @@ export default function Scene({ action, setAction }) {
         floatingRange={[-0.04, 0.04]}
       >
         <Portfolio action={action} setAction={setAction} />
+      </Float>
+      <Float
+        action={action}
+        speed={1}
+        rotationIntensity={0.6}
+        floatIntensity={0.7}
+        floatingRange={[-0.04, 0.04]}
+      >
+        <Montanahead action={action} setAction={setAction} />
       </Float>
     </Canvas>
   );

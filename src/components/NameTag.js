@@ -22,7 +22,7 @@ export function NameTag({ action, setAction }) {
       (action === "nameTag" ? 2 : 0) ||
       (action === "home" ? 0.5 : 0) ||
       (action !== "nameTag" || "home" ? 0 : 0),
-    position: action === "nameTag" ? [0, 0.5, 0] : [0, 3.2, 0],
+    position: action === "nameTag" ? [0, 0.5, 0] : [0, -1.7, 0],
   });
 
   // This reference will give us direct access to the mesh

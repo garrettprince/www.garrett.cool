@@ -17,7 +17,7 @@ export function PlayDate({ action, setAction, ...props }) {
 
   const { scale, position } = useSpring({
     scale:
-      (action === "playDate" ? 2 : 0) ||
+      (action === "playDate" ? 1.8 : 0) ||
       (action === "home" ? 0.7 : 0) ||
       (action !== "playDate" || "home" ? 0 : 0),
     position: action === "playDate" ? [0, 0.5, 0] : [1, 2.5, 0],
@@ -29,7 +29,7 @@ export function PlayDate({ action, setAction, ...props }) {
   useFrame(() => {
     action === "playDate"
       ? (meshRef.current.rotation.y += 0.005)
-      : (meshRef.current.rotation.y = 0);
+      : (meshRef.current.rotation.y = -0.4);
   });
 
   return (
