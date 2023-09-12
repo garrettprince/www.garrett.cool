@@ -8,6 +8,8 @@ import {
   useAnimations,
   Sparkles,
   BakeShadows,
+  TransformControls,
+  PresentationControls,
 } from "@react-three/drei";
 import { useState, useRef } from "react";
 import { useSpring, animated } from "@react-spring/three";
@@ -20,6 +22,7 @@ import { NameTag } from "./NameTag";
 import GarrettFace from "./GarrettFace";
 import Background from "./Background";
 import ContactPhone from "./ContactPhone";
+import Portfolio from "./Portfolio";
 
 export default function Scene({ action, setAction }) {
   return (
@@ -54,37 +57,52 @@ export default function Scene({ action, setAction }) {
         action={action}
         speed={1} // Animation speed, defaults to 1
         rotationIntensity={action === "home" ? 0.7 : 0.25} // XYZ rotation intensity, defaults to 1
-        floatIntensity={1} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
-        floatingRange={action === "home" ? [0.15, -0.15] : [0.05, 0.05]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
+        floatIntensity={0.6} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
+        floatingRange={action === "home" ? [0.10, -0.10] : [0.05, 0.05]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
       >
+        {/* LOOK INTO PRESENTATION CONTROLS MORE */}
+        {/* <PresentationControls
+          action={action}
+          enabled={action === "home" ? true : false}
+        > */}
         <GarrettFace action={action} setAction={setAction} />
+        {/* </PresentationControls> */}
       </Float>
       <Float
         action={action}
         speed={1}
-        rotationIntensity={0.7}
-        floatIntensity={1}
-        floatingRange={[-0.1, 0.1]}
+        rotationIntensity={0.6}
+        floatIntensity={0.7}
+        floatingRange={[-0.04, 0.04]}
       >
         <NameTag action={action} setAction={setAction} />
       </Float>
       <Float
         action={action}
         speed={1}
-        rotationIntensity={0.7}
-        floatIntensity={1}
-        floatingRange={[-0.1, 0.1]}
+        rotationIntensity={0.6}
+        floatIntensity={0.7}
+        floatingRange={[-0.04, 0.04]}
       >
         <PlayDate action={action} setAction={setAction} />
       </Float>
       <Float
         action={action}
         speed={1}
-        rotationIntensity={0.7}
-        floatIntensity={1}
-        floatingRange={[-0.1, 0.1]}
+        rotationIntensity={0.6}
+        floatIntensity={0.7}
+        floatingRange={[-0.04, 0.04]}
       >
         <ContactPhone action={action} setAction={setAction} />
+      </Float>
+      <Float
+        action={action}
+        speed={1}
+        rotationIntensity={0.6}
+        floatIntensity={0.7}
+        floatingRange={[-0.04, 0.04]}
+      >
+        <Portfolio action={action} setAction={setAction} />
       </Float>
     </Canvas>
   );
