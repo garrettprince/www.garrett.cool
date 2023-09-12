@@ -19,6 +19,7 @@ import { PlayDate } from "./PlayDate";
 import { NameTag } from "./NameTag";
 import GarrettFace from "./GarrettFace";
 import Background from "./Background";
+import ContactPhone from "./ContactPhone";
 
 export default function Scene({ action, setAction }) {
   return (
@@ -75,6 +76,15 @@ export default function Scene({ action, setAction }) {
         floatingRange={[-0.1, 0.1]}
       >
         <PlayDate action={action} setAction={setAction} />
+      </Float>
+      <Float
+        action={action}
+        speed={1}
+        rotationIntensity={0.7}
+        floatIntensity={1}
+        floatingRange={[-0.1, 0.1]}
+      >
+        <ContactPhone action={action} setAction={setAction} />
       </Float>
     </Canvas>
   );

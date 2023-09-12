@@ -11,8 +11,7 @@ import { useSpring, animated } from "@react-spring/three";
 import * as THREE from "three";
 
 export default function GarrettFace({ action, setAction }) {
-  const { scale, color, position, rotation } = useSpring({
-    color: action !== "home" ? "green" : "red",
+  const { scale, position, rotation } = useSpring({
     scale: action !== "home" ? 0.7 : 1.8,
     position: action !== "home" ? [-1.2, -1.8, 0] : [0, 0.5, 0],
     rotation: action !== "home" ? [0.2, 0.8, 0] : [0, 0, 0],
@@ -40,7 +39,7 @@ export default function GarrettFace({ action, setAction }) {
       rotation={rotation}
     >
       <animated.boxGeometry />
-      <animated.meshStandardMaterial color={color} />
+      <animated.meshStandardMaterial color={"red"} />
     </animated.mesh>
   );
 }

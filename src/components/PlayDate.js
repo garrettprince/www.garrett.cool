@@ -16,8 +16,11 @@ export function PlayDate({ action, setAction, ...props }) {
   );
 
   const { scale, position } = useSpring({
-    scale: action === "playDate" ? 1 : 0.7,
-    position: action === "playDate" ? [0, 0.5, 0] : [-1, 3.2, 0],
+    scale:
+      (action === "playDate" ? 2 : 0) ||
+      (action === "home" ? 0.7 : 0) ||
+      (action !== "playDate" || "home" ? 0 : 0),
+    position: action === "playDate" ? [0, 0.5, 0] : [1, 2.5, 0],
   });
 
   const meshRef = useRef();
@@ -31,14 +34,10 @@ export function PlayDate({ action, setAction, ...props }) {
 
   return (
     <group {...props} dispose={null}>
-      <group
+      <animated.group
         ref={meshRef}
-        scale={
-          (action === "playDate" ? 2 : 0) ||
-          (action === "home" ? 0.7 : 0) ||
-          (action !== "playDate" || "home" ? 0 : 0)
-        }
-        position={action !== "playDate" ? [1.2, 2.5, 0] : [0, 0.5, 0]}
+        scale={scale}
+        position={position}
         onClick={() =>
           action === "home" ? setAction("playDate") : setAction("home")
         }
@@ -211,7 +210,7 @@ export function PlayDate({ action, setAction, ...props }) {
             material={materials.PlainMetal}
           />
         </group>
-      </group>
+      </animated.group>
     </group>
   );
 }
