@@ -20,7 +20,7 @@ export default function Portfolio({ action, setAction, ...props }) {
       (action !== "portfolio" || "home" ? 0 : 0),
     position:
       (action === "portfolio" ? [0, 0.5, 0] : 0) ||
-      (action === "home" ? [-1.1, 2.5, 0] : 0) ||
+      (action === "home" ? [-1.3, 2.5, 0] : 0) ||
       (action !== "portfolio" || "home" ? [-1.2, 2.5, 0] : 0),
     rotation: action === "home" ? [0.5, 0, 0] : [0.5, 0, 0],
   });

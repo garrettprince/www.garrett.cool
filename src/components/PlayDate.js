@@ -20,7 +20,7 @@ export function PlayDate({ action, setAction, ...props }) {
       (action === "playDate" ? 1.8 : 0) ||
       (action === "home" ? 0.75 : 0) ||
       (action !== "playDate" || "home" ? 0 : 0),
-    position: action === "playDate" ? [0, 0.5, 0] : [1, 2.5, 0],
+    position: action === "playDate" ? [0, 0.5, 0] : [1.4, 2.5, 0],
   });
 
   const meshRef = useRef();
