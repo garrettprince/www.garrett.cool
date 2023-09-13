@@ -33,6 +33,9 @@ export function PlayDate({ action, setAction, ...props }) {
   });
 
   return (
+    // Credit to blendswapisweird for model
+    // Can be seen at https://blendswap.com/blend/25751
+
     <group {...props} dispose={null}>
       <animated.group
         ref={meshRef}

@@ -25,7 +25,7 @@ export default function Overlay({ action, setAction }) {
             action={action}
             setAction={setAction}
             title="Portfolio"
-            subtitle="What I do and don't know"
+            subtitle="Things I do and don't know"
           />
           <TextBubble input="This is the bubble for the nametag icon and we'll see what it looks like with a few lines of text here and there." />
         </div>
@@ -47,7 +47,7 @@ export default function Overlay({ action, setAction }) {
             action={action}
             setAction={setAction}
             title="Playdate Development"
-            subtitle="Coming 2026"
+            subtitle="Coming 2025"
           />
           <TextBubble input="Not much to say on this yet, other than my siblings and I are in the process of making a game in the next few years or so. More to come." />
         </div>
@@ -69,7 +69,7 @@ export default function Overlay({ action, setAction }) {
             action={action}
             setAction={setAction}
             title="About Me"
-            subtitle="Oh, it's all true"
+            subtitle="It's all true"
           />
           <TextBubble input="This is the bubble for the nametag icon and we'll see what it looks like with a few lines of text here and there." />
         </div>
@@ -95,10 +95,10 @@ function ProjectTitle({ title, subtitle, action, setAction }) {
       initial={{ y: 4, opacity: 0 }}
       animate={{ y: -2, opacity: 1 }}
       transition={{ ease: "easeOut", duration: 0.8 }}
-      className="absolute w-56 text-center top-7 left-0 right-0 mx-auto"
+      className="absolute w-64 text-center top-7 left-0 right-0 mx-auto"
     >
-      <h1 className="font-bold text-3xl mb-2">{title}</h1>
-      <p className="mono">{subtitle}</p>
+      <h1 className="font-black font-sans text-4xl mb-1">{title}</h1>
+      <p className=" font-serif italic text-lg">{subtitle}</p>
     </motion.div>
   );
 }
@@ -107,7 +107,7 @@ function XButton({ action, setAction }) {
   return (
     <div>
       <XMarkIcon
-        className="absolute top-6 right-5 h-10 w-10"
+        className="absolute top-8 right-5 h-7 w-7"
         onClick={() => setAction("home")}
       />
     </div>
@@ -118,7 +118,7 @@ function NextButton({ action, setAction }) {
   return (
     <div>
       <ArrowRightIcon
-        className="absolute top-1/2 right-5 h-10 w-10"
+        className="absolute top-1/2 right-5 h-7 w-7"
         onClick={() =>
           action === "portfolio"
             ? setAction("montanahead")
@@ -143,7 +143,7 @@ function PreviousButton({ action, setAction }) {
   return (
     <div>
       <ArrowLeftIcon
-        className="absolute top-1/2 left-5 h-10 w-10"
+        className="absolute top-1/2 left-5 h-7 w-7"
         onClick={() =>
           action === "portfolio"
             ? setAction("longAddition")
@@ -208,9 +208,14 @@ function TextBubble({ action, setAction, input }) {
         i++;
         setTimeout(typeWriter, speed);
       }
+      //   for (let i = 0; i < input.length; i++) {
+      //     setTypedText((typedText) => typedText + txt.charAt(i));
+      //   }
     }
 
     typeWriter();
+
+    return () => clearTimeout(typeWriter);
   }, [input]);
 
   return (
@@ -219,7 +224,7 @@ function TextBubble({ action, setAction, input }) {
       initial={{ y: 4, opacity: 0 }}
       animate={{ y: -2, opacity: 1 }}
       transition={{ ease: "easeOut", duration: 0.9 }}
-      className="absolute w-64 ml-[30%] rounded-xl text-left text-xs px-4 py-2 bottom-10 left-0 right-0 mx-auto my-auto mb-10  sm:ml-[35%] md:ml-[40%]"
+      className="absolute w-64 ml-[30%] rounded-xl text-left text-sm px-4 py-2 bottom-10 left-0 right-0 mx-auto my-auto mb-10  sm:ml-[35%] md:ml-[40%]  font-sans"
     >
       {typedText}
     </motion.div>
