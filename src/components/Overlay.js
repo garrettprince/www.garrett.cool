@@ -3,7 +3,11 @@
 import { useState } from "react";
 import { useSpring, animated } from "@react-spring/three";
 import { motion } from "framer-motion";
-import { XMarkIcon } from "@heroicons/react/24/solid";
+import {
+  XMarkIcon,
+  ArrowRightIcon,
+  ArrowLeftIcon,
+} from "@heroicons/react/24/solid";
 
 // Main Overlay function all other functions are fed through
 export default function Overlay({ action, setAction }) {
@@ -12,8 +16,14 @@ export default function Overlay({ action, setAction }) {
       {/* Navigation - Mainly for x button to get back to main page */}
       {/* <Nav /> */}
 
-      {action != "home" && <XButton action={action} setAction={setAction} />}
-      {/* <XButton /> */}
+      {action != "home" && (
+        <div>
+          <XButton action={action} setAction={setAction} />
+          <NextButton action={action} setAction={setAction} />
+          <PreviousButton action={action} setAction={setAction} />
+        </div>
+      )}
+
       {action === "nameTag" && (
         <div>
           <ProjectTitle
@@ -51,15 +61,6 @@ function ProjectTitle({ title, subtitle, action, setAction }) {
       <h1 className="font-bold text-3xl">{title}</h1>
       <p className="mono">{subtitle}</p>
     </motion.div>
-
-    // FIND OUT WHY NOT WORKING //
-    // <animated.div
-    //   className="absolute w-40 text-center top-20 left-0 right-0 mx-auto"
-    //   style={{ ...springs }}
-    // >
-    //   <h1 className="font-bold text-3xl">{title}</h1>
-    //   <p className="">{subtitle}</p>
-    // </animated.div>
   );
 }
 
@@ -69,6 +70,56 @@ function XButton({ action, setAction }) {
       <XMarkIcon
         className="absolute top-5 right-5 h-10 w-10"
         onClick={() => setAction("home")}
+      />
+    </div>
+  );
+}
+
+function NextButton({ action, setAction }) {
+  return (
+    <div>
+      <ArrowRightIcon
+        className="absolute top-1/2 right-5 h-10 w-10"
+        onClick={() =>
+          action === "portfolio"
+            ? setAction("montanahead")
+            : action === "montanahead"
+            ? setAction("playDate")
+            : action === "playDate"
+            ? setAction("contactPhone")
+            : action === "contactPhone"
+            ? setAction("nameTag")
+            : action === "nameTag"
+            ? setAction("longAddition")
+            : action === "longAddition"
+            ? setAction("portfolio")
+            : action === "portfolio"
+        }
+      />
+    </div>
+  );
+}
+
+function PreviousButton({ action, setAction }) {
+  return (
+    <div>
+      <ArrowLeftIcon
+        className="absolute top-1/2 left-5 h-10 w-10"
+        onClick={() =>
+          action === "portfolio"
+            ? setAction("longAddition")
+            : action === "longAddition"
+            ? setAction("nameTag")
+            : action === "nameTag"
+            ? setAction("contactPhone")
+            : action === "contactPhone"
+            ? setAction("playDate")
+            : action === "playDate"
+            ? setAction("montanahead")
+            : action === "montanahead"
+            ? setAction("portfolio")
+            : action === "portfolio"
+        }
       />
     </div>
   );

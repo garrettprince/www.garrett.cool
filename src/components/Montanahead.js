@@ -19,22 +19,22 @@ export default function Montanahead({ action, setAction, ...props }) {
   const { scale, position } = useSpring({
     scale:
       (action === "montanahead" ? 0.005 : 0) ||
-      (action === "home" ? 0.002 : 0) ||
+      (action === "home" ? 0.0026 : 0) ||
       (action !== "montanahead" || "home" ? 0 : 0),
     position:
       (action === "montanahead" ? [0, 0.5, 0] : 0) ||
-      (action === "home" ? [0, 3.2, 0] : 0) ||
-      (action !== "montanahead" || "home" ? [0, 3.2, 0] : 0),
+      (action === "home" ? [0, 3.1, 0] : 0) ||
+      (action !== "montanahead" || "home" ? [0, 3.1, 0] : 0),
   });
 
   const meshRef = useRef();
 
-  // Subscribe this component to the render-loop, animating the mesh every frame
   useFrame(() => {
     action === "montanahead"
       ? (meshRef.current.rotation.z -= 0.005)
       : (meshRef.current.rotation.z = -0.25);
   });
+
   return (
     <animated.group
       {...props}

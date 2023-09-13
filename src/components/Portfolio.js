@@ -16,7 +16,7 @@ export default function Portfolio({ action, setAction, ...props }) {
   const { scale, position, rotation } = useSpring({
     scale:
       (action === "portfolio" ? 0.0035 : 0) ||
-      (action === "home" ? 0.0015 : 0) ||
+      (action === "home" ? 0.0018 : 0) ||
       (action !== "portfolio" || "home" ? 0 : 0),
     position:
       (action === "portfolio" ? [0, 0.5, 0] : 0) ||

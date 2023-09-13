@@ -16,7 +16,7 @@ export default function ContactPhone({ props, action, setAction }) {
   const { scale, position } = useSpring({
     scale:
       (action === "contactPhone" ? 0.005 : 0) ||
-      (action === "home" ? 0.00175 : 0) ||
+      (action === "home" ? 0.00225 : 0) ||
       (action !== "contactPhone" || "home" ? 0 : 0),
     position:
       (action === "contactPhone" ? [0, 0.5, 0] : 0) ||

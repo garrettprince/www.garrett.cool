@@ -19,11 +19,11 @@ export default function LongAddition({ action, setAction, ...props }) {
   const { scale, position } = useSpring({
     scale:
       (action === "longAddition" ? 0.002 : 0) ||
-      (action === "home" ? 0.00069 : 0) ||
+      (action === "home" ? 0.00085 : 0) ||
       (action !== "longAddition" || "home" ? 0 : 0),
     position:
       (action === "longAddition" ? [0, 0.5, 0] : 0) ||
-      (action === "home" ? [1, -1.4, 0] : 0) ||
+      (action === "home" ? [1, -1.35, 0] : 0) ||
       (action !== "longAddition" || "home" ? [1, -1.4, 0] : 0),
   });
 
@@ -33,7 +33,7 @@ export default function LongAddition({ action, setAction, ...props }) {
   useFrame(() => {
     action === "longAddition"
       ? (meshRef.current.rotation.y += 0.005)
-      : (meshRef.current.rotation.y = 0.34);
+      : (meshRef.current.rotation.y = 0.2);
   });
 
   return (
