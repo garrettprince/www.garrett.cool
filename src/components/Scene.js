@@ -46,7 +46,7 @@ export default function Scene({ action, setAction }) {
       <directionalLight position={[4, 5, 6]} intensity={1} color={"#fff"} />
       <directionalLight position={[1, 1, 1]} intensity={1} color={"#fff"} />
 
-      <Environment preset="city" />
+      <Environment preset="night" />
 
       {/*  maybe add subtle sparkles later, read drei docs */}
       {/* <Sparkles /> */}

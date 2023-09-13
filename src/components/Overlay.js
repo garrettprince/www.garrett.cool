@@ -1,6 +1,4 @@
-// Overlay will handle all 2D text based on user interaction with the objects in Scene.js
-
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useSpring, animated } from "@react-spring/three";
 import { motion } from "framer-motion";
 import {
@@ -8,14 +6,11 @@ import {
   ArrowRightIcon,
   ArrowLeftIcon,
 } from "@heroicons/react/24/solid";
+import { useEffect } from "react";
 
-// Main Overlay function all other functions are fed through
 export default function Overlay({ action, setAction }) {
   return (
     <main className="">
-      {/* Navigation - Mainly for x button to get back to main page */}
-      {/* <Nav /> */}
-
       {action != "home" && (
         <div>
           <XButton action={action} setAction={setAction} />
@@ -24,15 +19,26 @@ export default function Overlay({ action, setAction }) {
         </div>
       )}
 
-      {action === "nameTag" && (
+      {action === "portfolio" && (
         <div>
           <ProjectTitle
             action={action}
             setAction={setAction}
-            title="Blue Block"
-            subtitle="Coming 2025"
+            title="Portfolio"
+            subtitle="What I do and don't know"
           />
           <TextBubble input="This is the bubble for the nametag icon and we'll see what it looks like with a few lines of text here and there." />
+        </div>
+      )}
+      {action === "montanahead" && (
+        <div>
+          <ProjectTitle
+            action={action}
+            setAction={setAction}
+            title="Montanahead Demos"
+            subtitle="I made some music a while ago"
+          />
+          <TextBubble input="This is the bubble for the nametag icon and we'll see what it looks like with a few lines of text here and there.  And also" />
         </div>
       )}
       {action === "playDate" && (
@@ -40,10 +46,43 @@ export default function Overlay({ action, setAction }) {
           <ProjectTitle
             action={action}
             setAction={setAction}
-            title="PlayDate"
+            title="Playdate Development"
             subtitle="Coming 2026"
           />
-          <TextBubble input="This is yet another test to see if these different blocks work with different state." />
+          <TextBubble input="Not much to say on this yet, other than my siblings and I are in the process of making a game in the next few years or so. More to come." />
+        </div>
+      )}
+      {action === "contactPhone" && (
+        <div>
+          <ProjectTitle
+            action={action}
+            setAction={setAction}
+            title="Contact"
+            subtitle="Much obliged"
+          />
+          <TextBubble input="This is the bubble for the nametag icon and we'll see what it looks like with a few lines of text here and there." />
+        </div>
+      )}
+      {action === "nameTag" && (
+        <div>
+          <ProjectTitle
+            action={action}
+            setAction={setAction}
+            title="About Me"
+            subtitle="Oh, it's all true"
+          />
+          <TextBubble input="This is the bubble for the nametag icon and we'll see what it looks like with a few lines of text here and there." />
+        </div>
+      )}
+      {action === "longAddition" && (
+        <div>
+          <ProjectTitle
+            action={action}
+            setAction={setAction}
+            title="Long Addition"
+            subtitle="A man and his blog"
+          />
+          <TextBubble input="This is the bubble for the nametag icon and we'll see what it looks like with a few lines of text here and there." />
         </div>
       )}
     </main>
@@ -56,9 +95,9 @@ function ProjectTitle({ title, subtitle, action, setAction }) {
       initial={{ y: 4, opacity: 0 }}
       animate={{ y: -2, opacity: 1 }}
       transition={{ ease: "easeOut", duration: 0.8 }}
-      className="absolute w-40 text-center top-20 left-0 right-0 mx-auto"
+      className="absolute w-56 text-center top-7 left-0 right-0 mx-auto"
     >
-      <h1 className="font-bold text-3xl">{title}</h1>
+      <h1 className="font-bold text-3xl mb-2">{title}</h1>
       <p className="mono">{subtitle}</p>
     </motion.div>
   );
@@ -68,7 +107,7 @@ function XButton({ action, setAction }) {
   return (
     <div>
       <XMarkIcon
-        className="absolute top-5 right-5 h-10 w-10"
+        className="absolute top-6 right-5 h-10 w-10"
         onClick={() => setAction("home")}
       />
     </div>
@@ -125,24 +164,54 @@ function PreviousButton({ action, setAction }) {
   );
 }
 
+// function TextBubble({ action, setAction, input }) {
+//   useEffect(() => {
+//     let i = 0;
+//     let txt = input;
+//     let speed = 25;
+
+//     function typeWriter() {
+//       if (i < txt.length) {
+//         document.getElementById("info").innerHTML += txt.charAt(i);
+//         i++;
+//         setTimeout(typeWriter, speed);
+//       }
+//     }
+
+//     typeWriter();
+//   }, [input]);
+
+//   console.log(input);
+
+//   return (
+//     <motion.div
+//       id="info"
+//       initial={{ y: 4, opacity: 0 }}
+//       animate={{ y: -2, opacity: 1 }}
+//       transition={{ ease: "easeOut", duration: 0.9 }}
+//       className="absolute w-64 ml-[30%] rounded-xl text-left text-xs px-4 py-2 bottom-10 left-0 right-0 mx-auto my-auto mb-10  sm:ml-[35%] md:ml-[40%]"
+//     ></motion.div>
+//   );
+// }
+
 function TextBubble({ action, setAction, input }) {
-  let i = 0;
-  let txt = input;
-  let speed = 25;
+  const [typedText, setTypedText] = useState("");
 
-  function typeWriter() {
-    if (i < txt.length) {
-      document.getElementById("info").innerHTML += txt.charAt(i);
-      i++;
-      setTimeout(typeWriter, speed);
-    }
-  }
+  useEffect(() => {
+    let i = 0;
+    let txt = input;
+    let speed = 25;
 
-  function typeWriterAction() {
-    if (action === "nameTag") {
-      return typeWriter();
+    function typeWriter() {
+      if (i < txt.length) {
+        setTypedText((prevTypedText) => prevTypedText + txt.charAt(i));
+        i++;
+        setTimeout(typeWriter, speed);
+      }
     }
-  }
+
+    typeWriter();
+  }, [input]);
 
   return (
     <motion.div
@@ -150,10 +219,9 @@ function TextBubble({ action, setAction, input }) {
       initial={{ y: 4, opacity: 0 }}
       animate={{ y: -2, opacity: 1 }}
       transition={{ ease: "easeOut", duration: 0.9 }}
-      className="absolute w-64 ml-[30%] rounded-xl text-left text-xs px-4 py-2 bottom-10 left-0 right-0 mx-auto my-auto mb-10 bg-white shadow-xl sm:ml-[35%] md:ml-[40%]"
-      onClick={typeWriter}
+      className="absolute w-64 ml-[30%] rounded-xl text-left text-xs px-4 py-2 bottom-10 left-0 right-0 mx-auto my-auto mb-10  sm:ml-[35%] md:ml-[40%]"
     >
-      hey
+      {typedText}
     </motion.div>
   );
 }
