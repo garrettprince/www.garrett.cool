@@ -18,7 +18,7 @@ import { Depth, LayerMaterial } from "lamina";
 
 // Component imports
 import { PlayDate } from "./PlayDate";
-import { NameTag } from "./NameTag";
+import NameTag from "./NameTag";
 import GarrettFace from "./GarrettFace";
 import Background from "./Background";
 import ContactPhone from "./ContactPhone";
@@ -46,7 +46,7 @@ export default function Scene({ action, setAction }) {
       <directionalLight position={[4, 5, 6]} intensity={1} color={"#fff"} />
       <directionalLight position={[1, 1, 1]} intensity={1} color={"#fff"} />
 
-      <Environment preset="night" />
+      <Environment preset="warehouse" />
 
       {/*  maybe add subtle sparkles later, read drei docs */}
       {/* <Sparkles /> */}

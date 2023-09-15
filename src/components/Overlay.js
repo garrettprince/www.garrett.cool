@@ -97,7 +97,7 @@ function ProjectTitle({ title, subtitle, action, setAction }) {
       transition={{ ease: "easeOut", duration: 0.8 }}
       className="absolute w-64 text-center top-7 left-0 right-0 mx-auto"
     >
-      <h1 className="font-black font-sans text-4xl mb-1">{title}</h1>
+      <h1 className="font-bold font-sans text-4xl mb-1">{title}</h1>
       <p className=" font-serif italic text-lg">{subtitle}</p>
     </motion.div>
   );
