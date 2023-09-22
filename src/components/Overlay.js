@@ -35,7 +35,7 @@ export default function Overlay({ action, setAction }) {
           <ProjectTitle
             action={action}
             setAction={setAction}
-            title="Montanahead Demos"
+            title="Demos"
             subtitle="I made some music a while ago"
           />
           <TextBubble input="This is the bubble for the nametag icon and we'll see what it looks like with a few lines of text here and there.  And also" />
@@ -95,10 +95,10 @@ function ProjectTitle({ title, subtitle, action, setAction }) {
       initial={{ y: 4, opacity: 0 }}
       animate={{ y: -2, opacity: 1 }}
       transition={{ ease: "easeOut", duration: 0.8 }}
-      className="absolute w-64 text-center top-7 left-0 right-0 mx-auto"
+      className="absolute w-64 text-center top-[1.6rem] left-0 right-0 mx-auto"
     >
-      <h1 className="font-bold font-sans text-4xl mb-1">{title}</h1>
-      <p className=" font-serif italic text-lg">{subtitle}</p>
+      <h1 className="font-bold font-sans text-white text-4xl mb-1">{title}</h1>
+      {/* <p className=" font-sans text-md">{subtitle}</p> */}
     </motion.div>
   );
 }
@@ -107,7 +107,7 @@ function XButton({ action, setAction }) {
   return (
     <div>
       <XMarkIcon
-        className="absolute top-8 right-5 h-7 w-7"
+        className="absolute top-8 right-5 h-7 w-7 text-white"
         onClick={() => setAction("home")}
       />
     </div>
@@ -118,7 +118,7 @@ function NextButton({ action, setAction }) {
   return (
     <div>
       <ArrowRightIcon
-        className="absolute top-1/2 right-5 h-7 w-7"
+        className="absolute top-[40%] right-5 h-7 w-7 text-white"
         onClick={() =>
           action === "portfolio"
             ? setAction("montanahead")
@@ -143,7 +143,7 @@ function PreviousButton({ action, setAction }) {
   return (
     <div>
       <ArrowLeftIcon
-        className="absolute top-1/2 left-5 h-7 w-7"
+        className="absolute top-[40%] left-5 h-7 w-7 text-white"
         onClick={() =>
           action === "portfolio"
             ? setAction("longAddition")
@@ -224,7 +224,7 @@ function TextBubble({ action, setAction, input }) {
       initial={{ y: 4, opacity: 0 }}
       animate={{ y: -2, opacity: 1 }}
       transition={{ ease: "easeOut", duration: 0.9 }}
-      className="absolute w-64 ml-[30%] rounded-xl text-left text-sm px-4 py-2 bottom-10 left-0 right-0 mx-auto my-auto mb-10  sm:ml-[35%] md:ml-[40%]  font-sans"
+      className="absolute w-64 ml-[30%] rounded-xl text-left text-sm px-4 py-2 bottom-10 left-0 right-0 mx-auto my-auto mb-10  sm:ml-[35%] md:ml-[40%]  font-sans text-white"
     >
       {typedText}
     </motion.div>
