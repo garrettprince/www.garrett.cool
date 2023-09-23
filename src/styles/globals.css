@@ -20,4 +20,17 @@
     overflow: hidden;
     user-select: none;
   }
+
+  .title-shadow {
+    text-shadow: 5px 5px 1px black, 5px 5px 1px black, 5px 5px 1px black,
+      4px 4px 1px black, 4px 4px 1px black, 4px 4px 1px black, 3px 3px 1px black,
+      3px 3px 1px black, 3px 3px 1px black, 2px 2px 1px black, 2px 2px 1px black,
+      2px 2px 1px black, 1px 1px 1px black, 1px 1px 1px black, 1px 1px 1px black;
+  }
+
+  .white-button-shadow {
+    filter: drop-shadow(1px 1px 0px black) drop-shadow(1px 1px 0px black)
+      drop-shadow(1px 1px 0px black) drop-shadow(1px 1px 0px black)
+      drop-shadow(1px 1px 0px black) ;
+  }
 }

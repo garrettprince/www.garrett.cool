@@ -11,7 +11,7 @@ import {
 import { useState, useRef } from "react";
 import { useSpring, animated } from "@react-spring/three";
 import * as THREE from "three";
-import { Depth, LayerMaterial } from "lamina";
+import { Depth, LayerMaterial, Noise } from "lamina";
 
 export default function Background({ action, setAction }) {
   const { scale, position, rotation, color } = useSpring({
@@ -20,27 +20,32 @@ export default function Background({ action, setAction }) {
       (action === "home" ? 0.75 : 0) ||
       (action !== "playDate" || "home" ? 0 : 0),
     position: action === "playDate" ? [0, 0.5, 0] : [1.4, 2.5, 0],
-    rotation: action === "playDate" ? [1, 1, 1] : [0, 0, 0],
-    // color: action === "playDate" ? `${"#b52b4e"}` : `${"#fff"}`,
+    rotation: action === "playDate" ? [1, 1, 1] : [2, 2, 7],
+    // color: action === "playDate" ? "#b52b4e" : `${"#fff"}`,
   });
 
   const meshRef = useRef();
 
   return (
-    <animated.mesh ref={meshRef} scale={scale} rotation={rotation}>
-      <sphereGeometry args={[1, 64, 64]} />
-      <LayerMaterial side={THREE.BackSide}>
+    <animated.mesh
+      ref={meshRef}
+      scale={scale}
+      rotation={rotation}
+      action={action}
+    >
+      <sphereGeometry args={[1, 64, 64]} action={action} />
+      <LayerMaterial side={THREE.BackSide} action={action}>
         <Depth
           action={action}
-          colorA="#b52b4e"
-          colorB="#0081fc"
+          colorA={action === "playDate" ? "#eb4034" : "#fff"}
+          colorB="blue"
           alpha={1}
           mode="normal"
-          near={220}
-          far={250}
+          near={250}
+          far={100}
           origin={[100, 100, -100]}
-          grain={10}
         />
+        {/* <Noise colorA="black" alpha={0.1} /> */}
       </LayerMaterial>
     </animated.mesh>
   );

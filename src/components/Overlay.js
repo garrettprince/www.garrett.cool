@@ -7,6 +7,7 @@ import {
   ArrowLeftIcon,
 } from "@heroicons/react/24/solid";
 import { useEffect } from "react";
+import Link from "next/link";
 
 export default function Overlay({ action, setAction }) {
   return (
@@ -49,6 +50,11 @@ export default function Overlay({ action, setAction }) {
             title="Playdate Development"
             subtitle="Coming 2025"
           />
+          <Visit
+            action={action}
+            setAction={setAction}
+            website="https://www.longaddition.com"
+          />
           <TextBubble input="Not much to say on this yet, other than my siblings and I are in the process of making a game in the next few years or so. More to come." />
         </div>
       )}
@@ -82,6 +88,11 @@ export default function Overlay({ action, setAction }) {
             title="Long Addition"
             subtitle="A man and his blog"
           />
+          <Visit
+            action={action}
+            setAction={setAction}
+            website="https://www.longaddition.com"
+          />
           <TextBubble input="This is the bubble for the nametag icon and we'll see what it looks like with a few lines of text here and there." />
         </div>
       )}
@@ -97,7 +108,9 @@ function ProjectTitle({ title, subtitle, action, setAction }) {
       transition={{ ease: "easeOut", duration: 0.8 }}
       className="absolute w-64 text-center top-[1.6rem] left-0 right-0 mx-auto"
     >
-      <h1 className="font-bold font-sans text-white text-4xl mb-1">{title}</h1>
+      <h1 className="title-shadow font-bold font-sans text-white text-4xl mb-1">
+        {title}
+      </h1>
       {/* <p className=" font-sans text-md">{subtitle}</p> */}
     </motion.div>
   );
@@ -163,6 +176,31 @@ function PreviousButton({ action, setAction }) {
     </div>
   );
 }
+
+function Visit({ action, setAction, website }) {
+  return (
+    <div>
+      <motion.a
+        initial={{ y: 4, opacity: 0 }}
+        animate={{ y: -2, opacity: 1 }}
+        transition={{ ease: "easeOut", duration: 1 }}
+      >
+        <Link
+          href={website}
+          className={
+            action === "playDate"
+              ? "absolute rounded-lg py-1 px-2 text-sm text-center white-button-shadow bg-white mx-auto left-0 right-0 top-[8rem] w-20 font-black"
+              : "absolute rounded-lg py-1 px-2 text-sm text-center white-button-shadow bg-white mx-auto left-0 right-0 top-[5.4rem] w-20 font-black"
+          }
+        >
+          VISIT
+        </Link>
+      </motion.a>
+    </div>
+  );
+}
+
+("absolute rounded-lg py-1 px-2 text-sm text-center white-button-shadow bg-white mx-auto left-0 right-0 top-[5.6rem] w-20 font-black");
 
 // function TextBubble({ action, setAction, input }) {
 //   useEffect(() => {
