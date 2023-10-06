@@ -28,6 +28,12 @@ export default function Overlay({ action, setAction }) {
             title="Portfolio"
             subtitle="Things I do and don't know"
           />
+          <Visit
+            action={action}
+            setAction={setAction}
+            website1="/"
+            website2="https://github.com/garrettprince"
+          />
           <TextBubble input="This is the bubble for the nametag icon and we'll see what it looks like with a few lines of text here and there." />
         </div>
       )}
@@ -38,6 +44,11 @@ export default function Overlay({ action, setAction }) {
             setAction={setAction}
             title="Demos"
             subtitle="I made some music a while ago"
+          />
+          <Visit
+            action={action}
+            setAction={setAction}
+            website1="https://www.montanahead.com"
           />
           <TextBubble input="This is the bubble for the nametag icon and we'll see what it looks like with a few lines of text here and there.  And also" />
         </div>
@@ -50,11 +61,7 @@ export default function Overlay({ action, setAction }) {
             title="Playdate Development"
             subtitle="Coming 2025"
           />
-          <Visit
-            action={action}
-            setAction={setAction}
-            website="https://www.longaddition.com"
-          />
+          <Visit action={action} setAction={setAction} website="/" />
           <TextBubble input="Not much to say on this yet, other than my siblings and I are in the process of making a game in the next few years or so. More to come." />
         </div>
       )}
@@ -65,6 +72,12 @@ export default function Overlay({ action, setAction }) {
             setAction={setAction}
             title="Contact"
             subtitle="Much obliged"
+          />
+          <Visit
+            action={action}
+            setAction={setAction}
+            website1="https://www.instagram.com/garrettjprince"
+            website2="mailto:garrettjamesprince@gmail.com"
           />
           <TextBubble input="This is the bubble for the nametag icon and we'll see what it looks like with a few lines of text here and there." />
         </div>
@@ -91,7 +104,7 @@ export default function Overlay({ action, setAction }) {
           <Visit
             action={action}
             setAction={setAction}
-            website="https://www.longaddition.com"
+            website1="https://www.longaddition.com"
           />
           <TextBubble input="This is the bubble for the nametag icon and we'll see what it looks like with a few lines of text here and there." />
         </div>
@@ -175,7 +188,7 @@ function PreviousButton({ action, setAction }) {
   );
 }
 
-function Visit({ action, setAction, website }) {
+function Visit({ action, setAction, website1, website2 }) {
   return (
     <div>
       <motion.a
@@ -183,16 +196,62 @@ function Visit({ action, setAction, website }) {
         animate={{ y: -2, opacity: 1 }}
         transition={{ ease: "easeOut", duration: 1 }}
       >
-        <Link
-          href={website}
-          className={
-            action === "playDate"
-              ? "absolute py-1 px-2 text-sm text-center  bg-white mx-auto left-0 right-0 top-[8rem] w-20 font-black italic border-black border-1 border"
-              : "absolute py-1 px-2 text-sm text-center border-black border-1 border bg-white mx-auto left-0 right-0 top-[5.4rem] w-20 font-black italic"
-          }
-        >
-          VISIT
-        </Link>
+        {action === "playDate" && (
+          <div
+            href={website1}
+            className="absolute py-1 px-2 text-sm text-center  bg-white mx-auto left-0 right-0 top-[8rem] w-32 text-black/20 font-black italic border-black/20 border-1 border"
+          >
+            COMING 2025
+          </div>
+        )}
+        {action === "longAddition" && (
+          <Link
+            href={website1}
+            className="absolute py-1 px-2 text-sm text-center border-black border-1 border bg-white mx-auto left-0 right-0 top-[5.4rem] w-20 font-black italic"
+          >
+            VISIT
+          </Link>
+        )}
+        {action === "portfolio" && (
+          <div>
+            <Link
+              href={website1}
+              className="absolute py-1 px-2 text-sm text-center border-black border-1 border bg-white mx-auto left-0 right-24 top-[5.4rem] w-20 font-black italic"
+            >
+              VISIT
+            </Link>
+            <Link
+              href={website2}
+              className="absolute py-1 px-2 text-sm text-center border-black border-1 border bg-white mx-auto left-24 right-0 top-[5.4rem] w-20 font-black italic"
+            >
+              GITHUB
+            </Link>
+          </div>
+        )}
+        {action === "montanahead" && (
+          <Link
+            href={website1}
+            className="absolute py-1 px-2 text-sm text-center border-black border-1 border bg-white mx-auto left-0 right-0 top-[5.4rem] w-20 font-black italic"
+          >
+            VISIT
+          </Link>
+        )}
+        {action === "contactPhone" && (
+          <div>
+            <Link
+              href={website1}
+              className="absolute py-1 px-2 text-sm text-center border-black border-1 border bg-white mx-auto left-0 right-24 top-[5.4rem] w-20 font-black italic"
+            >
+              EMAIL
+            </Link>
+            <Link
+              href={website2}
+              className="absolute py-1 px-2 text-sm text-center border-black border-1 border bg-white mx-auto left-24 right-0 top-[5.4rem] w-20 font-black italic"
+            >
+              INSTA
+            </Link>
+          </div>
+        )}
       </motion.a>
     </div>
   );

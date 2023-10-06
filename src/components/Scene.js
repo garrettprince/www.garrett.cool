@@ -66,13 +66,7 @@ export default function Scene({ action, setAction }) {
         floatIntensity={0.6} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
         floatingRange={action === "home" ? [0.1, -0.1] : [0.05, 0.05]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
       >
-        {/* LOOK INTO PRESENTATION CONTROLS MORE */}
-        {/* <PresentationControls
-          action={action}
-          enabled={action === "home" ? true : false}
-        > */}
         <GarrettFace action={action} setAction={setAction} />
-        {/* </PresentationControls> */}
       </Float>
       <Float
         action={action}
