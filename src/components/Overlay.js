@@ -108,9 +108,7 @@ function ProjectTitle({ title, subtitle, action, setAction }) {
       transition={{ ease: "easeOut", duration: 0.8 }}
       className="absolute w-64 text-center top-[1.6rem] left-0 right-0 mx-auto"
     >
-      <h1 className="title-shadow font-bold font-sans text-white text-4xl mb-1">
-        {title}
-      </h1>
+      <h1 className="font-light font-sans  text-4xl mb-1">{title}</h1>
       {/* <p className=" font-sans text-md">{subtitle}</p> */}
     </motion.div>
   );
@@ -120,7 +118,7 @@ function XButton({ action, setAction }) {
   return (
     <div>
       <XMarkIcon
-        className="absolute top-8 right-5 h-7 w-7 text-white"
+        className="absolute top-8 right-5 h-7 w-7 "
         onClick={() => setAction("home")}
       />
     </div>
@@ -131,7 +129,7 @@ function NextButton({ action, setAction }) {
   return (
     <div>
       <ArrowRightIcon
-        className="absolute top-[40%] right-5 h-7 w-7 text-white"
+        className="absolute top-[40%] right-5 h-7 w-7 "
         onClick={() =>
           action === "portfolio"
             ? setAction("montanahead")
@@ -156,7 +154,7 @@ function PreviousButton({ action, setAction }) {
   return (
     <div>
       <ArrowLeftIcon
-        className="absolute top-[40%] left-5 h-7 w-7 text-white"
+        className="absolute top-[40%] left-5 h-7 w-7 "
         onClick={() =>
           action === "portfolio"
             ? setAction("longAddition")
@@ -189,8 +187,8 @@ function Visit({ action, setAction, website }) {
           href={website}
           className={
             action === "playDate"
-              ? "absolute rounded-lg py-1 px-2 text-sm text-center white-button-shadow bg-white mx-auto left-0 right-0 top-[8rem] w-20 font-black"
-              : "absolute rounded-lg py-1 px-2 text-sm text-center white-button-shadow bg-white mx-auto left-0 right-0 top-[5.4rem] w-20 font-black"
+              ? "absolute py-1 px-2 text-sm text-center  bg-white mx-auto left-0 right-0 top-[8rem] w-20 font-black italic border-black border-1 border"
+              : "absolute py-1 px-2 text-sm text-center border-black border-1 border bg-white mx-auto left-0 right-0 top-[5.4rem] w-20 font-black italic"
           }
         >
           VISIT
@@ -199,8 +197,6 @@ function Visit({ action, setAction, website }) {
     </div>
   );
 }
-
-("absolute rounded-lg py-1 px-2 text-sm text-center white-button-shadow bg-white mx-auto left-0 right-0 top-[5.6rem] w-20 font-black");
 
 // function TextBubble({ action, setAction, input }) {
 //   useEffect(() => {
@@ -262,7 +258,7 @@ function TextBubble({ action, setAction, input }) {
       initial={{ y: 4, opacity: 0 }}
       animate={{ y: -2, opacity: 1 }}
       transition={{ ease: "easeOut", duration: 0.9 }}
-      className="absolute w-64 ml-[30%] rounded-xl text-left text-sm px-4 py-2 bottom-10 left-0 right-0 mx-auto my-auto mb-10  sm:ml-[35%] md:ml-[40%]  font-sans text-white"
+      className="absolute w-64 ml-[30%] rounded-xl text-left text-sm px-4 py-2 bottom-10 left-0 right-0 mx-auto my-auto mb-10  sm:ml-[35%] md:ml-[40%]  font-sans font-light "
     >
       {typedText}
     </motion.div>

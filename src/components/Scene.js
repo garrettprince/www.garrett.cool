@@ -51,12 +51,12 @@ export default function Scene({ action, setAction }) {
       <directionalLight position={[4, 5, 6]} intensity={1} color={"#fff"} />
       <directionalLight position={[1, 1, 1]} intensity={1} color={"#fff"} />
 
-      <Environment preset="night" />
+      <Environment preset="city" />
 
-      <OrbitControls />
+      {/* <OrbitControls /> */}
 
       {/* Background Sphere */}
-      <Background action={action} setAction={setAction} />
+      {/* <Background action={action} setAction={setAction} /> */}
 
       {/* Objects */}
       <Float
