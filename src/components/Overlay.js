@@ -1,5 +1,4 @@
-import { useRef, useState } from "react";
-import { useSpring, animated } from "@react-spring/three";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   XMarkIcon,
@@ -31,7 +30,7 @@ export default function Overlay({ action, setAction }) {
           <Visit
             action={action}
             setAction={setAction}
-            website1="/"
+            website1="/portfolio"
             website2="https://github.com/garrettprince"
           />
           <TextBubble input="C lick 'VISIT' to view a collection of my work over the past 18 months or so. There's a small write up and link for the code to each project." />
@@ -79,7 +78,7 @@ export default function Overlay({ action, setAction }) {
             website1="mailto:garrettjamesprince@gmail.com"
             website2="https://www.instagram.com/garrettjprince"
           />
-          <TextBubble input="R each out via email, Instagram, or Github and let's talk about the big things in life: Tapas are just small plates of food." />
+          <TextBubble input="R  each out via email, Instagram, or Github and let's talk about the big things in life: Tapas are just small plates of food." />
         </div>
       )}
       {action === "nameTag" && (
@@ -113,7 +112,7 @@ export default function Overlay({ action, setAction }) {
   );
 }
 
-function ProjectTitle({ title, subtitle, action, setAction }) {
+function ProjectTitle({ title }) {
   return (
     <motion.div
       initial={{ y: 4, opacity: 0 }}
@@ -122,12 +121,11 @@ function ProjectTitle({ title, subtitle, action, setAction }) {
       className="absolute w-64 text-center top-[1.6rem] left-0 right-0 mx-auto"
     >
       <h1 className="font-light font-sans  text-4xl mb-1">{title}</h1>
-      {/* <p className=" font-sans text-md">{subtitle}</p> */}
     </motion.div>
   );
 }
 
-function XButton({ action, setAction }) {
+function XButton({ setAction }) {
   return (
     <div>
       <XMarkIcon
@@ -188,7 +186,7 @@ function PreviousButton({ action, setAction }) {
   );
 }
 
-function Visit({ action, setAction, website1, website2 }) {
+function Visit({ action, website1, website2 }) {
   return (
     <div>
       <motion.a
@@ -217,6 +215,7 @@ function Visit({ action, setAction, website1, website2 }) {
             <Link
               href={website1}
               className="absolute pt-1 pb-[.2rem] text-xs text-center border-black border-1 border bg-white mx-auto left-0 right-24 top-[5.4rem] w-16 font-black italic"
+              // className="absolute pt-1 pb-[.2rem] text-sm text-center mx-auto left-0 right-24 top-[5.4rem] w-16 font-light"
             >
               VISIT
             </Link>
@@ -257,37 +256,7 @@ function Visit({ action, setAction, website1, website2 }) {
   );
 }
 
-// function TextBubble({ action, setAction, input }) {
-//   useEffect(() => {
-//     let i = 0;
-//     let txt = input;
-//     let speed = 25;
-
-//     function typeWriter() {
-//       if (i < txt.length) {
-//         document.getElementById("info").innerHTML += txt.charAt(i);
-//         i++;
-//         setTimeout(typeWriter, speed);
-//       }
-//     }
-
-//     typeWriter();
-//   }, [input]);
-
-//   console.log(input);
-
-//   return (
-//     <motion.div
-//       id="info"
-//       initial={{ y: 4, opacity: 0 }}
-//       animate={{ y: -2, opacity: 1 }}
-//       transition={{ ease: "easeOut", duration: 0.9 }}
-//       className="absolute w-64 ml-[30%] rounded-xl text-left text-xs px-4 py-2 bottom-10 left-0 right-0 mx-auto my-auto mb-10  sm:ml-[35%] md:ml-[40%]"
-//     ></motion.div>
-//   );
-// }
-
-function TextBubble({ action, setAction, input }) {
+function TextBubble({ input }) {
   const [typedText, setTypedText] = useState("");
 
   useEffect(() => {
@@ -301,9 +270,6 @@ function TextBubble({ action, setAction, input }) {
         i++;
         setTimeout(typeWriter, speed);
       }
-      //   for (let i = 0; i < input.length; i++) {
-      //     setTypedText((typedText) => typedText + txt.charAt(i));
-      //   }
     }
 
     typeWriter();

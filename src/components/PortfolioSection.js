@@ -10,7 +10,7 @@ import { useState, useRef } from "react";
 import { useSpring, animated } from "@react-spring/three";
 import * as THREE from "three";
 
-export default function Portfolio({ action, setAction, ...props }) {
+export default function PortfolioSection({ action, setAction, ...props }) {
   const { nodes, materials } = useGLTF("/macbook_pro_copy.glb");
 
   const { scale, position, rotation } = useSpring({

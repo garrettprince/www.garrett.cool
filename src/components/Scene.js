@@ -29,7 +29,7 @@ import NameTag from "./NameTag";
 import GarrettFace from "./GarrettFace";
 import Background from "./Background";
 import ContactPhone from "./ContactPhone";
-import Portfolio from "./Portfolio";
+import PortfolioSection from "./PortfolioSection";
 import Montanahead from "./Montanahead";
 import LongAddition from "./LongAddition";
 
@@ -102,7 +102,7 @@ export default function Scene({ action, setAction }) {
         floatIntensity={0.7}
         floatingRange={[-0.04, 0.04]}
       >
-        <Portfolio action={action} setAction={setAction} />
+        <PortfolioSection action={action} setAction={setAction} />
       </Float>
       <Float
         action={action}
