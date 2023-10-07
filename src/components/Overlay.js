@@ -199,7 +199,7 @@ function Visit({ action, setAction, website1, website2 }) {
         {action === "playDate" && (
           <div
             href={website1}
-            className="absolute py-1 px-2 text-sm text-center  bg-white mx-auto left-0 right-0 top-[8rem] w-32 text-black/20 font-black italic border-black/20 border-1 border"
+            className="absolute pt-1 pb-[.2rem] text-xs text-center  bg-white mx-auto left-0 right-0 top-[8rem] w-32 text-black/20 font-black italic border-black/20 border-1 border"
           >
             COMING 2025
           </div>
@@ -207,7 +207,7 @@ function Visit({ action, setAction, website1, website2 }) {
         {action === "longAddition" && (
           <Link
             href={website1}
-            className="absolute py-1 px-2 text-sm text-center border-black border-1 border bg-white mx-auto left-0 right-0 top-[5.4rem] w-20 font-black italic"
+            className="absolute pt-1 pb-[.2rem] text-xs text-center border-black border-1 border bg-white mx-auto left-0 right-0 top-[5.4rem] w-16 font-black italic"
           >
             VISIT
           </Link>
@@ -216,13 +216,13 @@ function Visit({ action, setAction, website1, website2 }) {
           <div>
             <Link
               href={website1}
-              className="absolute py-1 px-2 text-sm text-center border-black border-1 border bg-white mx-auto left-0 right-24 top-[5.4rem] w-20 font-black italic"
+              className="absolute pt-1 pb-[.2rem] text-xs text-center border-black border-1 border bg-white mx-auto left-0 right-24 top-[5.4rem] w-16 font-black italic"
             >
               VISIT
             </Link>
             <Link
               href={website2}
-              className="absolute py-1 px-2 text-sm text-center border-black border-1 border bg-white mx-auto left-24 right-0 top-[5.4rem] w-20 font-black italic"
+              className="absolute pt-1 pb-[.2rem] text-xs text-center border-black border-1 border bg-white mx-auto left-20 right-0 top-[5.4rem] w-20 font-black italic"
             >
               GITHUB
             </Link>
@@ -231,7 +231,7 @@ function Visit({ action, setAction, website1, website2 }) {
         {action === "montanahead" && (
           <Link
             href={website1}
-            className="absolute py-1 px-2 text-sm text-center border-black border-1 border bg-white mx-auto left-0 right-0 top-[5.4rem] w-20 font-black italic"
+            className="absolute pt-1 pb-[.2rem] text-xs text-center border-black border-1 border bg-white mx-auto left-0 right-0 top-[5.4rem] w-16 font-black italic"
           >
             VISIT
           </Link>
@@ -240,13 +240,13 @@ function Visit({ action, setAction, website1, website2 }) {
           <div>
             <Link
               href={website1}
-              className="absolute py-1 px-2 text-sm text-center border-black border-1 border bg-white mx-auto left-0 right-24 top-[5.4rem] w-20 font-black italic"
+              className="absolute pt-1 pb-[.2rem] text-xs text-center border-black border-1 border bg-white mx-auto left-0 right-20 top-[5.4rem] w-16 font-black italic"
             >
               EMAIL
             </Link>
             <Link
               href={website2}
-              className="absolute py-1 px-2 text-sm text-center border-black border-1 border bg-white mx-auto left-24 right-0 top-[5.4rem] w-20 font-black italic"
+              className="absolute pt-1 pb-[.2rem] text-xs text-center border-black border-1 border bg-white mx-auto left-20 right-0 top-[5.4rem] w-16 font-black italic"
             >
               INSTA
             </Link>
