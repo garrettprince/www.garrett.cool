@@ -34,7 +34,7 @@ export default function Overlay({ action, setAction }) {
             website1="/"
             website2="https://github.com/garrettprince"
           />
-          <TextBubble input="This is the bubble for the nametag icon and we'll see what it looks like with a few lines of text here and there." />
+          <TextBubble input="Click 'VISIT' to view a collection of my work over the past 18 months or so. There's a small write up and link for the code to each project." />
         </div>
       )}
       {action === "montanahead" && (
@@ -50,7 +50,7 @@ export default function Overlay({ action, setAction }) {
             setAction={setAction}
             website1="https://www.montanahead.com"
           />
-          <TextBubble input="This is the bubble for the nametag icon and we'll see what it looks like with a few lines of text here and there.  And also" />
+          <TextBubble input="I made some music a few years back and sent casettes to friends, family, and strangers. The casette ended up not working but it looks really cool." />
         </div>
       )}
       {action === "playDate" && (
@@ -62,7 +62,7 @@ export default function Overlay({ action, setAction }) {
             subtitle="Coming 2025"
           />
           <Visit action={action} setAction={setAction} website="/" />
-          <TextBubble input="Not much to say on this yet, other than my siblings and I are in the process of making a game in the next few years or so. More to come." />
+          <TextBubble input="My siblings and I are in the process of making a game in the next few years. More to come." />
         </div>
       )}
       {action === "contactPhone" && (
@@ -76,10 +76,10 @@ export default function Overlay({ action, setAction }) {
           <Visit
             action={action}
             setAction={setAction}
-            website1="https://www.instagram.com/garrettjprince"
-            website2="mailto:garrettjamesprince@gmail.com"
+            website1="mailto:garrettjamesprince@gmail.com"
+            website2="https://www.instagram.com/garrettjprince"
           />
-          <TextBubble input="This is the bubble for the nametag icon and we'll see what it looks like with a few lines of text here and there." />
+          <TextBubble input="Reach out via email, Instagram, or Github and let's talk about the big things in life: Tapas are just small plates of food." />
         </div>
       )}
       {action === "nameTag" && (
@@ -90,7 +90,7 @@ export default function Overlay({ action, setAction }) {
             title="About Me"
             subtitle="It's all true"
           />
-          <TextBubble input="This is the bubble for the nametag icon and we'll see what it looks like with a few lines of text here and there." />
+          <TextBubble input="I'm a completely self taught programmer with long legs, long arms and I love shiny objects." />
         </div>
       )}
       {action === "longAddition" && (
@@ -106,7 +106,7 @@ export default function Overlay({ action, setAction }) {
             setAction={setAction}
             website1="https://www.longaddition.com"
           />
-          <TextBubble input="This is the bubble for the nametag icon and we'll see what it looks like with a few lines of text here and there." />
+          <TextBubble input="I started a blog mid 2023 spanning a wide range of topics including my attraction to Javascript libraries, death, photography, and rubies. I took a break from writing while I traveled but will be resuming early 2024." />
         </div>
       )}
     </main>
