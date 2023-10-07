@@ -34,7 +34,7 @@ export default function Overlay({ action, setAction }) {
             website1="/"
             website2="https://github.com/garrettprince"
           />
-          <TextBubble input="Click 'VISIT' to view a collection of my work over the past 18 months or so. There's a small write up and link for the code to each project." />
+          <TextBubble input="C lick 'VISIT' to view a collection of my work over the past 18 months or so. There's a small write up and link for the code to each project." />
         </div>
       )}
       {action === "montanahead" && (
@@ -50,7 +50,7 @@ export default function Overlay({ action, setAction }) {
             setAction={setAction}
             website1="https://www.montanahead.com"
           />
-          <TextBubble input="I made some music a few years back and sent casettes to friends, family, and strangers. The casette ended up not working but it looks really cool." />
+          <TextBubble input="I  made some music a few years back and sent casettes to friends, family, and strangers. The casette ended up not working but it looks really cool." />
         </div>
       )}
       {action === "playDate" && (
@@ -62,7 +62,7 @@ export default function Overlay({ action, setAction }) {
             subtitle="Coming 2025"
           />
           <Visit action={action} setAction={setAction} website="/" />
-          <TextBubble input="My siblings and I are in the process of making a game in the next few years. More to come." />
+          <TextBubble input="M y siblings and I are in the process of making a game in the next few years. More to come." />
         </div>
       )}
       {action === "contactPhone" && (
@@ -79,7 +79,7 @@ export default function Overlay({ action, setAction }) {
             website1="mailto:garrettjamesprince@gmail.com"
             website2="https://www.instagram.com/garrettjprince"
           />
-          <TextBubble input="Reach out via email, Instagram, or Github and let's talk about the big things in life: Tapas are just small plates of food." />
+          <TextBubble input="R each out via email, Instagram, or Github and let's talk about the big things in life: Tapas are just small plates of food." />
         </div>
       )}
       {action === "nameTag" && (
@@ -90,7 +90,7 @@ export default function Overlay({ action, setAction }) {
             title="About Me"
             subtitle="It's all true"
           />
-          <TextBubble input="I'm a completely self taught programmer with long legs, long arms and I love shiny objects." />
+          <TextBubble input="I 'm a completely self taught programmer with long legs, long arms and I love shiny objects." />
         </div>
       )}
       {action === "longAddition" && (
@@ -106,7 +106,7 @@ export default function Overlay({ action, setAction }) {
             setAction={setAction}
             website1="https://www.longaddition.com"
           />
-          <TextBubble input="I started a blog mid 2023 spanning a wide range of topics including my attraction to Javascript libraries, death, photography, and rubies. I took a break from writing while I traveled but will be resuming early 2024." />
+          <TextBubble input="I  started a blog mid 2023 spanning a wide range of topics including my attraction to Javascript libraries, death, photography, and rubies. I took a break from writing while I traveled but will be resuming early 2024." />
         </div>
       )}
     </main>
@@ -317,7 +317,7 @@ function TextBubble({ action, setAction, input }) {
       initial={{ y: 4, opacity: 0 }}
       animate={{ y: -2, opacity: 1 }}
       transition={{ ease: "easeOut", duration: 0.9 }}
-      className="absolute w-64 ml-[30%] rounded-xl text-left text-sm px-4 py-2 bottom-10 left-0 right-0 mx-auto my-auto mb-10  sm:ml-[35%] md:ml-[40%]  font-sans font-light "
+      className="absolute w-64 ml-[30%] rounded-xl text-left text-sm px-4 py-2 bottom-8 left-0 right-0 mx-auto my-auto mb-10  sm:ml-[35%] md:ml-[40%]  font-sans font-light "
     >
       {typedText}
     </motion.div>
