@@ -214,14 +214,13 @@ function Visit({ action, website1, website2 }) {
           <div>
             <Link
               href={website1}
-              className="absolute pt-1 pb-[.2rem] text-xs text-center border-black border-1 border bg-white mx-auto left-0 right-24 top-[5.4rem] w-16 font-black italic"
-              // className="absolute pt-1 pb-[.2rem] text-sm text-center mx-auto left-0 right-24 top-[5.4rem] w-16 font-light"
+              className="absolute items-center bg-black rounded-full py-1 pl-[1.40rem] mx-auto left-0 right-24 top-[5.4rem] w-20 font-medium text-sm text-white"
             >
               VISIT
             </Link>
             <Link
               href={website2}
-              className="absolute pt-1 pb-[.2rem] text-xs text-center border-black border-1 border bg-white mx-auto left-20 right-0 top-[5.4rem] w-20 font-black italic"
+              className="absolute items-center bg-black rounded-full py-1 pl-[1.40rem] mx-auto left-24 right-0 top-[5.4rem] w-24 font-medium text-sm text-white"
             >
               GITHUB
             </Link>

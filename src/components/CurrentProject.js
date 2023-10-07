@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function CurrentProject({ currentProject, setCurrentProject }) {
   return (
-    <div>
+    <div className="">
       {currentProject === "Garrett.cool" && (
         <div className="">
           <motion.div
