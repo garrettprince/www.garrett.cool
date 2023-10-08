@@ -45,15 +45,15 @@ export default function Portfolio() {
       icon3:
         "https://res.cloudinary.com/dvwbpgk6p/image/upload/v1696673907/Garrett.cool%20Assets/Group_1_gk3eg6.png",
     },
-    {
-      name: "Junk",
-      icon1:
-        "https://res.cloudinary.com/dvwbpgk6p/image/upload/v1696687579/Garrett.cool%20Assets/Ellipse_13_xszbuc.png",
-      icon2:
-        "https://res.cloudinary.com/dvwbpgk6p/image/upload/v1696673908/Garrett.cool%20Assets/Group_2_povwly.png",
-      icon3:
-        "https://res.cloudinary.com/dvwbpgk6p/image/upload/v1696673907/Garrett.cool%20Assets/Group_1_gk3eg6.png",
-    },
+    // {
+    //   name: "Junk",
+    //   icon1:
+    //     "https://res.cloudinary.com/dvwbpgk6p/image/upload/v1696687579/Garrett.cool%20Assets/Ellipse_13_xszbuc.png",
+    //   icon2:
+    //     "https://res.cloudinary.com/dvwbpgk6p/image/upload/v1696673908/Garrett.cool%20Assets/Group_2_povwly.png",
+    //   icon3:
+    //     "https://res.cloudinary.com/dvwbpgk6p/image/upload/v1696673907/Garrett.cool%20Assets/Group_1_gk3eg6.png",
+    // },
     {
       name: "Automio",
       icon1:
@@ -111,7 +111,7 @@ export default function Portfolio() {
   ];
 
   return (
-    <div>
+    <div className="max-w-xl mx-auto">
       {currentProject === "list" && (
         <motion.div
           initial={{ y: 4, opacity: 0 }}

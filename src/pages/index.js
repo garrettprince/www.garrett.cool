@@ -16,7 +16,9 @@ export default function Home() {
       <div className="h-screen">
         <Scene action={action} setAction={setAction} />
       </div>
-      <Overlay action={action} setAction={setAction} />
+      <div className="">
+        <Overlay action={action} setAction={setAction} />
+      </div>
     </div>
   );
 }
