@@ -31,7 +31,7 @@ export default function CurrentProject({ currentProject, setCurrentProject }) {
               <div className="flex space-x-3 font-medium text-sm text-black/40">
                 <Link
                   href="https://www.spline.design/"
-                  className="flex items-center space-x-2 bg-black/10 rounded-full py-1 pl-3 pr-1"
+                  className="flex items-center space-x-2 bg-black/10 rounded-full py-1 pl-3 pr-1 shadow-md"
                 >
                   <p>SPLINE</p>
                   <img
@@ -42,7 +42,7 @@ export default function CurrentProject({ currentProject, setCurrentProject }) {
                 </Link>
                 <Link
                   href="https://www.cloudinary.com/"
-                  className="flex items-center space-x-2 bg-black/10 rounded-full py-1 pl-3 pr-1"
+                  className="flex items-center space-x-2 bg-black/10 rounded-full py-1 pl-3 pr-1 shadow-md"
                 >
                   <p>CLOUDINARY</p>
                   <img
@@ -53,7 +53,7 @@ export default function CurrentProject({ currentProject, setCurrentProject }) {
                 </Link>
                 <Link
                   href="https://www.nextjs.org/"
-                  className="flex items-center space-x-2 bg-black/10 rounded-full py-1 pl-3 pr-1"
+                  className="flex items-center space-x-2 bg-black/10 rounded-full py-1 pl-3 pr-1 shadow-md"
                 >
                   <p>NEXT</p>
                   <img

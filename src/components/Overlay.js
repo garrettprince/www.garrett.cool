@@ -78,7 +78,7 @@ export default function Overlay({ action, setAction }) {
             website1="mailto:garrettjamesprince@gmail.com"
             website2="https://www.instagram.com/garrettjprince"
           />
-          <TextBubble input="R  each out via email, Instagram, or Github and let's talk about the big things in life: Tapas are just small plates of food." />
+          <TextBubble input="R each out via email, Instagram, or Github and let's talk about the big things in life: Tapas are just small plates of food." />
         </div>
       )}
       {action === "nameTag" && (
@@ -105,7 +105,7 @@ export default function Overlay({ action, setAction }) {
             setAction={setAction}
             website1="https://www.longaddition.com"
           />
-          <TextBubble input="I  started a blog mid 2023 spanning a wide range of topics including my attraction to Javascript libraries, death, photography, and rubies. I took a break from writing while I traveled but will be resuming early 2024." />
+          <TextBubble input="I  started a blog mid 2023 spanning a wide range of topics including my attraction to Javascript libraries, death, photography, and rubies. I'll resume writing in 2024." />
         </div>
       )}
     </main>
@@ -194,18 +194,11 @@ function Visit({ action, website1, website2 }) {
         animate={{ y: -2, opacity: 1 }}
         transition={{ ease: "easeOut", duration: 1 }}
       >
-        {action === "playDate" && (
-          <div
-            href={website1}
-            className="absolute pt-1 pb-[.2rem] text-xs text-center  bg-white mx-auto left-0 right-0 top-[8rem] w-32 text-black/20 font-black italic border-black/20 border-1 border"
-          >
-            COMING 2025
-          </div>
-        )}
+        {action === "playDate" && <div></div>}
         {action === "longAddition" && (
           <Link
             href={website1}
-            className="absolute pt-1 pb-[.2rem] text-xs text-center border-black border-1 border bg-white mx-auto left-0 right-0 top-[5.4rem] w-16 font-black italic"
+            className="absolute items-center  rounded-full py-1 pl-[1.40rem] mx-auto left-0 right-0 top-[5.4rem] w-20 font-black italic text-xs text-black shadow-md"
           >
             VISIT
           </Link>
@@ -214,13 +207,13 @@ function Visit({ action, website1, website2 }) {
           <div>
             <Link
               href={website1}
-              className="absolute items-center bg-black rounded-full py-1 pl-[1.40rem] mx-auto left-0 right-24 top-[5.4rem] w-20 font-medium text-sm text-white"
+              className="absolute items-center  rounded-full py-1 pl-[1.40rem] mx-auto left-0 right-24 top-[5.4rem] w-20 font-black italic text-xs text-black shadow-md"
             >
               VISIT
             </Link>
             <Link
               href={website2}
-              className="absolute items-center bg-black rounded-full py-1 pl-[1.40rem] mx-auto left-24 right-0 top-[5.4rem] w-24 font-medium text-sm text-white"
+              className="absolute items-center rounded-full py-1 pl-[1.40rem] mx-auto left-24 right-0 top-[5.4rem] w-24 font-black italic text-xs text-black shadow-md"
             >
               GITHUB
             </Link>
@@ -229,7 +222,7 @@ function Visit({ action, website1, website2 }) {
         {action === "montanahead" && (
           <Link
             href={website1}
-            className="absolute pt-1 pb-[.2rem] text-xs text-center border-black border-1 border bg-white mx-auto left-0 right-0 top-[5.4rem] w-16 font-black italic"
+            className="absolute items-center  rounded-full py-1 pl-[1.40rem] mx-auto left-0 right-0 top-[5.4rem] w-20 font-black italic text-xs text-black shadow-md"
           >
             VISIT
           </Link>
@@ -238,13 +231,13 @@ function Visit({ action, website1, website2 }) {
           <div>
             <Link
               href={website1}
-              className="absolute pt-1 pb-[.2rem] text-xs text-center border-black border-1 border bg-white mx-auto left-0 right-20 top-[5.4rem] w-16 font-black italic"
+              className="absolute items-center  rounded-full py-1 pl-[1.40rem] mx-auto left-0 right-24 top-[5.4rem] w-20 font-black italic text-xs text-black shadow-md"
             >
               EMAIL
             </Link>
             <Link
               href={website2}
-              className="absolute pt-1 pb-[.2rem] text-xs text-center border-black border-1 border bg-white mx-auto left-20 right-0 top-[5.4rem] w-16 font-black italic"
+              className="absolute items-center rounded-full py-1 pl-[1.40rem] mx-auto left-24 right-0 top-[5.4rem] w-20 font-black italic text-xs text-black shadow-md"
             >
               INSTA
             </Link>
