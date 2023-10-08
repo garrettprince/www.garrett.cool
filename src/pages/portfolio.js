@@ -137,9 +137,9 @@ export default function Portfolio() {
               >
                 <div>{project.name}</div>
                 <div className="flex space-x-2">
-                  <img src={project.icon1} alt="" className="h-6 w-6 " />
-                  <img src={project.icon2} alt="" className="h-6 w-6" />
-                  <img src={project.icon3} alt="" className="h-6 w-6" />
+                  <img src={project.icon1} alt="" className="h-5 w-5 " />
+                  <img src={project.icon2} alt="" className="h-5 w-5" />
+                  <img src={project.icon3} alt="" className="h-5 w-5" />
                 </div>
               </div>
             ))}

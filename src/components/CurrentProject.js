@@ -28,38 +28,38 @@ export default function CurrentProject({ currentProject, setCurrentProject }) {
             </section>
 
             <section className="mx-auto mt-5">
-              <div className="flex space-x-3 font-medium text-sm text-black/40">
+              <div className="flex space-x-3 font-black text-xs text-black/40">
                 <Link
                   href="https://www.spline.design/"
-                  className="flex items-center space-x-2 bg-black/10 rounded-full py-1 pl-3 pr-1 shadow-md"
+                  className="flex items-center space-x-2 bg-black/10 rounded-full py-1 pl-3 pr-1 "
                 >
                   <p>SPLINE</p>
                   <img
                     src="https://res.cloudinary.com/dvwbpgk6p/image/upload/v1696674575/Garrett.cool%20Assets/Group_12_tfjsif.png"
                     alt=""
-                    className="h-6 w-6"
+                    className="h-5 w-5"
                   />
                 </Link>
                 <Link
                   href="https://www.cloudinary.com/"
-                  className="flex items-center space-x-2 bg-black/10 rounded-full py-1 pl-3 pr-1 shadow-md"
+                  className="flex items-center space-x-2 bg-black/10 rounded-full py-1 pl-3 pr-1"
                 >
                   <p>CLOUDINARY</p>
                   <img
                     src="https://res.cloudinary.com/dvwbpgk6p/image/upload/v1696673908/Garrett.cool%20Assets/Group_5_k24kkv.png"
                     alt=""
-                    className="h-6 w-6"
+                    className="h-5 w-5"
                   />
                 </Link>
                 <Link
                   href="https://www.nextjs.org/"
-                  className="flex items-center space-x-2 bg-black/10 rounded-full py-1 pl-3 pr-1 shadow-md"
+                  className="flex items-center space-x-2 bg-black/10 rounded-full py-1 pl-3 pr-1 "
                 >
                   <p>NEXT</p>
                   <img
                     src="https://res.cloudinary.com/dvwbpgk6p/image/upload/v1696673907/Garrett.cool%20Assets/Group_1_gk3eg6.png"
                     alt=""
-                    className="h-6 w-6"
+                    className="h-5 w-5"
                   />
                 </Link>
               </div>
