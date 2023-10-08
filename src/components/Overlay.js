@@ -33,7 +33,7 @@ export default function Overlay({ action, setAction }) {
             website1="/portfolio"
             website2="https://github.com/garrettprince"
           />
-          <TextBubble input="C lick 'VISIT' to view a collection of my work over the past 18 months or so. There's a small write up and link for the code to each project." />
+          <TextBubble input="Click 'VISIT' to view a collection of my work over the past 18 months or so. There's a small write up and link for the code to each project." />
         </div>
       )}
       {action === "montanahead" && (
@@ -78,7 +78,7 @@ export default function Overlay({ action, setAction }) {
             website1="mailto:garrettjamesprince@gmail.com"
             website2="https://www.instagram.com/garrettjprince"
           />
-          <TextBubble input="R each out via email, Instagram, or Github and let's talk about the big things in life: Tapas are just small plates of food." />
+          <TextBubble input="Rreach out via email, Instagram, or Github and let's talk about the big things in life: Tapas are just small plates of food." />
         </div>
       )}
       {action === "nameTag" && (
@@ -198,7 +198,7 @@ function Visit({ action, website1, website2 }) {
         {action === "longAddition" && (
           <Link
             href={website1}
-            className="absolute items-center  rounded-full py-1 pl-[1.45rem] mx-auto left-0 right-0 top-[5.4rem] w-20 font-black italic text-xs text-black bg-black/10 "
+            className="absolute items-center  rounded-full py-1 pl-[1.45rem] mx-auto left-0 right-0 top-20 w-20 font-black  text-xs text-black bg-black/10 "
           >
             VISIT
           </Link>
@@ -207,13 +207,13 @@ function Visit({ action, website1, website2 }) {
           <div>
             <Link
               href={website1}
-              className="absolute items-center  rounded-full py-1 pl-[1.45rem] mx-auto left-0 right-[6.5rem] top-[5.4rem] w-20 font-black italic text-xs text-black bg-black/10"
+              className="absolute items-center  rounded-full py-1 pl-[1.45rem] mx-auto left-0 right-[6.5rem] top-20 w-20 font-black  text-xs text-black bg-black/10"
             >
               VISIT
             </Link>
             <Link
               href={website2}
-              className="absolute items-center rounded-full py-1 pl-[1.45rem] mx-auto left-24 right-0 top-[5.4rem] w-24 font-black italic text-xs text-black bg-black/10"
+              className="absolute items-center rounded-full py-1 pl-[1.5rem] mx-auto left-24 right-0 top-20 w-24 font-black  text-xs text-black bg-black/10"
             >
               GITHUB
             </Link>
@@ -222,7 +222,7 @@ function Visit({ action, website1, website2 }) {
         {action === "montanahead" && (
           <Link
             href={website1}
-            className="absolute items-center  rounded-full py-1 pl-[1.45rem] mx-auto left-0 right-0 top-[5.4rem] w-20 font-black italic text-xs text-black bg-black/10"
+            className="absolute items-center  rounded-full py-1 pl-[1.45rem] mx-auto left-0 right-0 top-20 w-20 font-black  text-xs text-black bg-black/10"
           >
             VISIT
           </Link>
@@ -231,13 +231,13 @@ function Visit({ action, website1, website2 }) {
           <div>
             <Link
               href={website1}
-              className="absolute items-center  rounded-full py-1 pl-[1.30rem] mx-auto left-0 right-[5.7rem] top-[5.4rem] w-20 font-black italic text-xs text-black bg-black/10"
+              className="absolute items-center  rounded-full py-1 pl-[1.30rem] mx-auto left-0 right-[5.7rem] top-20 w-20 font-black  text-xs text-black bg-black/10"
             >
               EMAIL
             </Link>
             <Link
               href={website2}
-              className="absolute items-center rounded-full py-1 pl-[1.30rem] mx-auto left-24 right-0 top-[5.4rem] w-20 font-black italic text-xs text-black bg-black/10"
+              className="absolute items-center rounded-full py-1 pl-[1.30rem] mx-auto left-24 right-0 top-20 w-20 font-black  text-xs text-black bg-black/10"
             >
               INSTA
             </Link>

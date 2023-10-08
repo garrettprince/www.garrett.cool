@@ -27,7 +27,7 @@ export default function CurrentProject({ currentProject, setCurrentProject }) {
               />
             </section>
 
-            <section className="mx-auto mt-5">
+            <section className="mx-auto mt-4">
               <div className="flex space-x-3 font-black text-xs text-black/40">
                 <Link
                   href="https://www.spline.design/"
@@ -64,6 +64,45 @@ export default function CurrentProject({ currentProject, setCurrentProject }) {
                 </Link>
               </div>
             </section>
+            <img
+              src="https://res.cloudinary.com/dvwbpgk6p/image/upload/v1696751697/Garrett.cool%20Assets/Portfolio%20Screenshot/Group_2_xeyj9u.png"
+              alt=""
+              className="rounded-xl my-6"
+            />
+            <p className="font-light text-sm mb-2">
+              This is a test to see what multiple lines would look like if I
+              were to start typing the description. This is another sentence to
+              see what that wold look like.
+            </p>
+            <p className="font-light text-sm mb-2">
+              This is a test to see what multiple lines would look like if I
+              were to start typing the description. This is another sentence to
+              see what that wold look like.
+            </p>
+            <p className="font-light text-sm mb-2">
+              This is a test to see what multiple lines would look like if I
+              were to start typing the description. This is another sentence to
+              see what that wold look like.
+            </p>
+            <p className="font-light text-sm mb-8">
+              This is a test to see what multiple lines would look like if I
+              were to start typing the description. This is another sentence to
+              see what that wold look like.
+            </p>
+            <section className="flex justify-center space-x-3">
+              <Link
+                href="/"
+                className="rounded-full px-6 py-1 font-black text-xs text-black bg-black/10 "
+              >
+                VISIT
+              </Link>
+              <Link
+                href="/"
+                className="rounded-full px-6 py-1 font-black text-xs text-black bg-black/10 "
+              >
+                GITHUB
+              </Link>
+            </section>
           </motion.div>
         </div>
       )}
@@ -88,7 +127,7 @@ export default function CurrentProject({ currentProject, setCurrentProject }) {
               />
             </section>
 
-            <section className="mx-auto mt-5">
+            <section className="mx-auto mt-4">
               <div className="flex space-x-3 font-medium text-sm text-black/40">
                 <Link
                   href="https://www.cloudinary.com/"
@@ -114,6 +153,10 @@ export default function CurrentProject({ currentProject, setCurrentProject }) {
                 </Link>
               </div>
             </section>
+            <img
+              src="https://res.cloudinary.com/dvwbpgk6p/image/upload/v1696751697/Garrett.cool%20Assets/Portfolio%20Screenshot/Group_2_xeyj9u.png"
+              alt=""
+            />
           </motion.div>
         </div>
       )}
