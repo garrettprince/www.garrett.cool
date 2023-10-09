@@ -32,6 +32,7 @@ import ContactPhone from "./ContactPhone";
 import PortfolioSection from "./PortfolioSection";
 import Montanahead from "./Montanahead";
 import LongAddition from "./LongAddition";
+import FaceTest from "./FaceTest"
 
 export default function Scene({ action, setAction }) {
   return (
@@ -59,7 +60,7 @@ export default function Scene({ action, setAction }) {
       {/* <Background action={action} setAction={setAction} /> */}
 
       {/* Objects */}
-      <Float
+      {/* <Float
         action={action}
         speed={1} // Animation speed, defaults to 1
         rotationIntensity={action === "home" ? 0.7 : 0.25} // XYZ rotation intensity, defaults to 1
@@ -67,6 +68,15 @@ export default function Scene({ action, setAction }) {
         floatingRange={action === "home" ? [0.1, -0.1] : [0.05, 0.05]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
       >
         <GarrettFace action={action} setAction={setAction} />
+      </Float> */}
+      <Float
+        action={action}
+        speed={1} // Animation speed, defaults to 1
+        rotationIntensity={action === "home" ? 0.7 : 0.25} // XYZ rotation intensity, defaults to 1
+        floatIntensity={0.6} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
+        floatingRange={action === "home" ? [0.1, -0.1] : [0.05, 0.05]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
+      >
+        <FaceTest action={action} setAction={setAction} />
       </Float>
       <Float
         action={action}
