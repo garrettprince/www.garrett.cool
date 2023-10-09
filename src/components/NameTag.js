@@ -16,7 +16,7 @@ export default function NameTag({ action, setAction, ...props }) {
       (action !== "nameTag" || "home" ? 0 : 0),
     position:
       (action === "nameTag" ? [0, 0.5, 0] : 0) ||
-      (action === "home" ? [0, -1.7, 0] : 0) ||
+      (action === "home" ? [0, -1.6, 0] : 0) ||
       (action !== "nameTag" || "home" ? [0, -1.4, 0] : 0),
   });
 

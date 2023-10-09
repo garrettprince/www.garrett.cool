@@ -23,7 +23,7 @@ export default function LongAddition({ action, setAction, ...props }) {
       (action !== "longAddition" || "home" ? 0 : 0),
     position:
       (action === "longAddition" ? [0, 0.5, 0] : 0) ||
-      (action === "home" ? [1.35, -1.3, 0] : 0) ||
+      (action === "home" ? [1.35, -1, 0] : 0) ||
       (action !== "longAddition" || "home" ? [1, -1.4, 0] : 0),
   });
 
