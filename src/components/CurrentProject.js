@@ -448,7 +448,7 @@ export default function CurrentProject({ currentProject, setCurrentProject }) {
 
             <section className="flex justify-center space-x-3">
               <Link
-                href="https://github.com/garrettprince/google-clone"
+                href="https://github.com/garrettprince/instagram-bio"
                 className="rounded-full px-6 py-1 font-black text-xs text-black bg-black/10 "
               >
                 GITHUB
@@ -814,10 +814,13 @@ export default function CurrentProject({ currentProject, setCurrentProject }) {
               className="rounded-xl my-6"
             />
             <p className="font-light text-sm mb-2">
-              One of my very first projects. The first project that introduced me to the basics of Next.js and how to utilize external APIs like Mapbox.
+              One of my very first projects. The first project that introduced
+              me to the basics of Next.js and how to utilize external APIs like
+              Mapbox.
             </p>
             <p className="font-light text-sm mb-6">
-              Super simple app with simple navigation. Fun starter project and still fun to look back on.
+              Super simple app with simple navigation. Fun starter project and
+              still fun to look back on.
             </p>
 
             <section className="flex justify-center space-x-3">

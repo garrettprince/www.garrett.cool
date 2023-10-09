@@ -33,7 +33,7 @@ export default function Overlay({ action, setAction }) {
             website1="/portfolio"
             website2="https://github.com/garrettprince"
           />
-          <TextBubble input="Click 'VISIT' to view a collection of my work over the past 18 months or so. There's a small write up and link for the code to each project." />
+          <TextBubble input="Cl ick 'VISIT' to view a collection of my work over the past 18 months or so. There's a small write up and link for the code to each project." />
         </div>
       )}
       {action === "montanahead" && (
@@ -78,7 +78,7 @@ export default function Overlay({ action, setAction }) {
             website1="mailto:garrettjamesprince@gmail.com"
             website2="https://www.instagram.com/garrettjprince"
           />
-          <TextBubble input="Rreach out via email, Instagram, or Github and let's talk about the big things in life: Tapas are just small plates of food." />
+          <TextBubble input="Re ach out via email, Instagram, or Github and let's talk about the big things in life: Tapas are just small plates of food." />
         </div>
       )}
       {action === "nameTag" && (
