@@ -22,7 +22,7 @@ export default function CurrentProject({ currentProject, setCurrentProject }) {
                 {currentProject}
               </h1>
               <XMarkIcon
-                className="h-7 w-7"
+                className="h-7 w-7 cursor-pointer"
                 onClick={() => setCurrentProject("list")}
               />
             </section>
@@ -115,7 +115,7 @@ export default function CurrentProject({ currentProject, setCurrentProject }) {
                 {currentProject}
               </h1>
               <XMarkIcon
-                className="h-7 w-7"
+                className="h-7 w-7 cursor-pointer"
                 onClick={() => setCurrentProject("list")}
               />
             </section>
@@ -197,7 +197,7 @@ export default function CurrentProject({ currentProject, setCurrentProject }) {
                 {currentProject}
               </h1>
               <XMarkIcon
-                className="h-7 w-7"
+                className="h-7 w-7 cursor-pointer"
                 onClick={() => setCurrentProject("list")}
               />
             </section>
@@ -278,7 +278,7 @@ export default function CurrentProject({ currentProject, setCurrentProject }) {
                 {currentProject}
               </h1>
               <XMarkIcon
-                className="h-7 w-7"
+                className="h-7 w-7 cursor-pointer"
                 onClick={() => setCurrentProject("list")}
               />
             </section>
@@ -396,7 +396,7 @@ export default function CurrentProject({ currentProject, setCurrentProject }) {
                 {currentProject}
               </h1>
               <XMarkIcon
-                className="h-7 w-7"
+                className="h-7 w-7 cursor-pointer"
                 onClick={() => setCurrentProject("list")}
               />
             </section>
@@ -473,7 +473,7 @@ export default function CurrentProject({ currentProject, setCurrentProject }) {
                 {currentProject}
               </h1>
               <XMarkIcon
-                className="h-7 w-7"
+                className="h-7 w-7 cursor-pointer"
                 onClick={() => setCurrentProject("list")}
               />
             </section>
@@ -553,7 +553,7 @@ export default function CurrentProject({ currentProject, setCurrentProject }) {
                 {currentProject}
               </h1>
               <XMarkIcon
-                className="h-7 w-7"
+                className="h-7 w-7 cursor-pointer"
                 onClick={() => setCurrentProject("list")}
               />
             </section>
@@ -638,7 +638,7 @@ export default function CurrentProject({ currentProject, setCurrentProject }) {
                 {currentProject}
               </h1>
               <XMarkIcon
-                className="h-7 w-7"
+                className="h-7 w-7 cursor-pointer"
                 onClick={() => setCurrentProject("list")}
               />
             </section>
@@ -700,7 +700,7 @@ export default function CurrentProject({ currentProject, setCurrentProject }) {
                 {currentProject}
               </h1>
               <XMarkIcon
-                className="h-7 w-7"
+                className="h-7 w-7 cursor-pointer"
                 onClick={() => setCurrentProject("list")}
               />
             </section>
@@ -776,7 +776,7 @@ export default function CurrentProject({ currentProject, setCurrentProject }) {
                 {currentProject}
               </h1>
               <XMarkIcon
-                className="h-7 w-7"
+                className="h-7 w-7 cursor-pointer"
                 onClick={() => setCurrentProject("list")}
               />
             </section>

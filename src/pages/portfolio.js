@@ -121,7 +121,7 @@ export default function Portfolio() {
         >
           <section className="flex justify-between items-center">
             <Link href="/">
-              <ArrowLeftIcon className="h-7 w-7" />
+              <ArrowLeftIcon className="h-7 w-7 cursor-pointer" />
             </Link>
             <h1 className="flex mx-auto mb-1 text-4xl font-sans font-light">
               Portfolio
