@@ -129,7 +129,7 @@ function XButton({ setAction }) {
   return (
     <div>
       <XMarkIcon
-        className="absolute top-8 right-5 h-7 w-7 "
+        className="absolute top-8 right-5 h-7 w-7 sm:right-[10%] md:right-[20%] lg:right-[30%] "
         onClick={() => setAction("home")}
       />
     </div>
@@ -140,7 +140,7 @@ function NextButton({ action, setAction }) {
   return (
     <div>
       <ArrowRightIcon
-        className="absolute top-[40%] right-5 h-7 w-7 "
+        className="absolute top-[40%] right-5 h-7 w-7 sm:right-[10%] md:right-[20%] lg:right-[30%] "
         onClick={() =>
           action === "portfolio"
             ? setAction("montanahead")
@@ -165,7 +165,7 @@ function PreviousButton({ action, setAction }) {
   return (
     <div>
       <ArrowLeftIcon
-        className="absolute top-[40%] left-5 h-7 w-7 "
+        className="absolute top-[40%] left-5 h-7 w-7 sm:left-[10%] md:left-[20%] lg:left-[30%]"
         onClick={() =>
           action === "portfolio"
             ? setAction("longAddition")
@@ -275,7 +275,7 @@ function TextBubble({ input }) {
       initial={{ y: 4, opacity: 0 }}
       animate={{ y: -2, opacity: 1 }}
       transition={{ ease: "easeOut", duration: 0.9 }}
-      className="absolute w-64 ml-[30%] rounded-xl text-left text-sm px-4 py-2 bottom-8 left-0 right-0 mx-auto my-auto mb-10  sm:ml-[35%] md:ml-[40%]  font-sans font-light "
+      className="absolute w-64 sm:w-72 ml-[30%] rounded-xl text-left text-sm px-4 py-2 bottom-8 left-0 right-0 mx-auto my-auto mb-10 sm:ml-[35%] md:ml-[42%] lg:ml-[45%] sm:mb-28 font-sans font-light"
     >
       {typedText}
     </motion.div>
