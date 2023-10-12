@@ -75,7 +75,7 @@ export default function Overlay({ action, setAction }) {
           <Visit
             action={action}
             setAction={setAction}
-            website1="mailto:garrettjamesprince@gmail.com"
+            website1="mailto:g@garrett.cool"
             website2="https://www.instagram.com/garrettjprince"
           />
           <TextBubble input="Re ach out via email, Instagram, or Github and let's talk about the big things in life: Tapas are just small plates of food." />
